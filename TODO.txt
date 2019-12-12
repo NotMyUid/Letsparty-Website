@@ -1,0 +1,2 @@
+-Still missing sanitize of inputs in "login" & "register" .php
+-Also missing session persistence in "login.php"
