@@ -31,11 +31,11 @@ function login($email, $pass, $db_connection) {
             return $obj->EMAIL;
         }
         else{
-            echo "ERROR: wrong password. <br>";
+            echo "ERROR: wrong password. <br>"; //DEBUG
         }
     }
     else{
-        echo "ERROR: in database check. <br>";
+        echo "ERROR: in database check. <br>";  //DEBUG
     }    
     mysqli_free_result($res);
     return false;
