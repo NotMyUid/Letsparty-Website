@@ -15,7 +15,7 @@ if(mysqli_connect_errno($con)){
 $email=filter_var(trim($_POST['email']), FILTER_VALIDATE_EMAIL); // replace null with $_POST and sanitization
 if($email !== false)
     $email=mysqli_real_escape_string($con,$email);
-$password=mysqli_real_escape_string($con,trim($_POST['password'])); // replace null with $_POST and sanitization
+$password=mysqli_real_escape_string($con,trim($_POST['pass'])); // replace null with $_POST and sanitization
 
 function login($email, $pass, $db_connection) {
     // TODO: login logic here
