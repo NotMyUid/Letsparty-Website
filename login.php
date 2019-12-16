@@ -7,7 +7,7 @@ require_once('db/mysql_credentials.php');
 // Open DBMS Server connection
 $con = new mysqli($mysql_host,$mysql_user,$mysql_pass,$mysql_db);
 if(mysqli_connect_errno($con)){
-    echo "Failed to connect to MySql: " . mysqli_connect_error($con);
+    echo "Failed to connect to MySql: " . mysqli_connect_error($con);   //DEBUG
 }
 
 // Get credentials from $_POST['email'] and $_POST['pass']
@@ -19,11 +19,11 @@ $password=mysqli_real_escape_string($con,trim($_POST['password'])); // replace n
 
 function login($email, $pass, $db_connection) {
     // TODO: login logic here
-    $query = "SELECT * FROM '".$users."' WHERE EMAIL='".$email."'";
+    $query = "SELECT * FROM '".$users."' WHERE email='".$email."'";
     $res = $con->query($query);
     if($res!==false && mysqli_num_rows($res)!== 0){
         $row=mysqli_fetch_assoc($res);
-        $pswd=$row['PASSWORD'];
+        $pswd=$row['password'];
         if(password_verify($password, $pswd)){
             // Return logged user
             $obj = mysqli_fetch_object($res);
