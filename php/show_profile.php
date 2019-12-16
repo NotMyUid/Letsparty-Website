@@ -1,7 +1,7 @@
 <?php
 
 // TODO: change credentials in the db/mysql_credentials.php file
-require_once('db/mysql_credentials.php');
+require_once('../db/mysql_credentials.php');
 
 // Open DBMS Server connection
 

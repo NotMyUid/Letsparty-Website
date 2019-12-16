@@ -1,7 +1,7 @@
 <?php
 
 
-require_once('db/mysql_credentials.php');
+require_once('../db/mysql_credentials.php');
 
 // Open DBMS Server connection
 $con = new mysqli($mysql_host,$mysql_user,$mysql_pass,$mysql_db);
