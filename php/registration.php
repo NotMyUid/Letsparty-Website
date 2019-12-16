@@ -1,6 +1,5 @@
 <?php
 
-
 require_once('../db/mysql_credentials.php');
 
 // Open DBMS Server connection
@@ -10,7 +9,7 @@ if(mysqli_connect_errno($con)){
 }
 
 // Get values from $_POST, but do it IN A SECURE WAY
-$email=mysqli_real_escape_string($con,$email);  // replace null with $_POST and sanitization
+$email=mysqli_real_escape_string($con,trim($_POST['firstName']));  // replace null with $_POST and sanitization
 $first_name=mysqli_real_escape_string($con,trim($_POST['firstName']));  // replace null with $_POST and sanitization
 $last_name=mysqli_real_escape_string($con,trim($_POST['lastName']));    // replace null with $_POST and sanitization
 $password=password_hash(mysqli_real_escape_string($con,trim($_POST['password'])),PASSWORD_DEFAULT); // replace null with $_POST and sanitization
