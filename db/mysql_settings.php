@@ -1,1 +1,2 @@
-$users="Users";
+<?php
+$mysql_users="Users";

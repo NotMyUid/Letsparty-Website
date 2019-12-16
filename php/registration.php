@@ -4,7 +4,7 @@ require_once('../db/mysql_credentials.php');
 require_once('../db/mysql_settings.php');
 
 // Open DBMS Server connection
-$con = new mysqli($mysql_host,$mysql_user,$mysql_pass,$mysql_db);
+$con = new mysqli($mysql_host,$mysql_user,$mysql_pass, $mysql_db,"22");
 if(mysqli_connect_errno($con)){
     echo "Failed to connect to MySql: " . mysqli_connect_error($con);
 }
@@ -23,7 +23,7 @@ function insert_user($email, $first_name, $last_name, $password, $password_confi
     // TODO: check if passwords match
     if(password_verify($password_confirm,$password)){
         // TODO: registration logic here
-        $query = "INSERT INTO '".$users."' VALUES ('".$email."','".$first_name."','".$last_name."', '".$password."')";
+        $query = "INSERT INTO Users VALUES ('".$email."','".$first_name."','".$last_name."', '".$password."')";
         $res = $db_connection->query($query);
         // Return if the registration was successful
         if($res) return true;
