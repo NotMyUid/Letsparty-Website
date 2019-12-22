@@ -1,12 +1,10 @@
 <?php
 
-// TODO: change credentials in the db/mysql_credentials.php file
 require_once('../db/mysql_credentials.php');
-require_once('../db/mysql_settings.php');
 
 // Add session control, header, ...
 // Open DBMS Server connection
-$con = new mysqli($mysql_host,$mysql_user,$mysql_pass,$mysql_db);
+$con = new mysqli($mysql_host,$mysql_user,$mysql_pass,$mysql_db, $mysql_port);
 if(mysqli_connect_errno($con)){
     echo "Failed to connect to MySql: " . mysqli_connect_error($con);   //DEBUG
 }
@@ -20,16 +18,16 @@ $password=mysqli_real_escape_string($con,trim($_POST['pass'])); // replace null 
 
 function login($email, $pass, $db_connection) {
     // TODO: login logic here
-    $query = "SELECT * FROM '".$users."' WHERE email='".$email."'";
-    $res = $con->query($query);
+    $query = "SELECT * FROM Users WHERE email='".$email."'";
+    $res = $db_connection->query($query);
     if($res!==false && mysqli_num_rows($res)!== 0){
         $row=mysqli_fetch_assoc($res);
         $pswd=$row['password'];
-        if(password_verify($password, $pswd)){
+        if(password_verify($pass, $pswd)){
             // Return logged user
-            $obj = mysqli_fetch_object($res);
             mysqli_free_result($res);
-            return $obj->EMAIL;
+            mysqli_close($db_connection);
+            return $row['email'];
         }
         else{
             echo "ERROR: wrong password. <br>"; //DEBUG
@@ -39,11 +37,12 @@ function login($email, $pass, $db_connection) {
         echo "ERROR: in database check. <br>";  //DEBUG
     }    
     mysqli_free_result($res);
+    mysqli_close($db_connection);
     return false;
 }
 
 // Get user from login
-$user = login($email, $pass, $con);
+$user = login($email, $password, $con);
 
 if ($user) {
     // Welcome message
