@@ -9,7 +9,7 @@ if(mysqli_connect_errno($con)){
 }
 
 // Get values from $_POST, but do it IN A SECURE WAY
-$email=mysqli_real_escape_string($con,filter_var(trim($_POST['email']), FILTER_VALIDATE_EMAIL));  // replace null with $_POST and sanitization
+$email=mysqli_real_escape_string($con,trim($_POST['email']));  // replace null with $_POST and sanitization
 $first_name=mysqli_real_escape_string($con,trim($_POST['firstname']));  // replace null with $_POST and sanitization
 $last_name=mysqli_real_escape_string($con,trim($_POST['lastname']));    // replace null with $_POST and sanitization
 $password=password_hash(mysqli_real_escape_string($con,trim($_POST['pass'])),PASSWORD_DEFAULT); // replace null with $_POST and sanitization
@@ -22,7 +22,7 @@ function insert_user($email, $first_name, $last_name, $password, $password_confi
     // TODO: check if passwords match
     if(password_verify($password_confirm,$password)){
         // TODO: registration logic here
-        $query = "INSERT INTO Users VALUES ('".$email."','".$first_name."','".$last_name."', '".$password."')";
+        $query = "INSERT INTO Users(email,firstname,lastname,password) VALUES ('".$email."','".$first_name."','".$last_name."', '".$password."')";
         $res = $db_connection->query($query);
         // Return if the registration was successful
         if($res) 

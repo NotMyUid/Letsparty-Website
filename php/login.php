@@ -1,7 +1,7 @@
 <?php
 
 require_once('../db/mysql_credentials.php');
-
+session_start();
 // Add session control, header, ...
 // Open DBMS Server connection
 $con = new mysqli($mysql_host,$mysql_user,$mysql_pass,$mysql_db, $mysql_port);
@@ -27,7 +27,7 @@ function login($email, $pass, $db_connection) {
             // Return logged user
             mysqli_free_result($res);
             mysqli_close($db_connection);
-            return $row['email'];
+            return $row;
         }
         else{
             echo "ERROR: wrong password. <br>"; //DEBUG
@@ -46,7 +46,8 @@ $user = login($email, $password, $con);
 
 if ($user) {
     // Welcome message
-    echo "Welcome $user!";
+    $_SESSION["user_id"]=$user['ID'];
+    echo "Welcome ". $user['email']."!";
 } else {
     // Error message
     echo "Wrong email or password";
