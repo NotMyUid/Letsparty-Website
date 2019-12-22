@@ -26,7 +26,8 @@ function insert_user($email, $first_name, $last_name, $password, $password_confi
         $res = $db_connection->query($query);
         // Return if the registration was successful
         if($res) 
-        {   mysqli_close($db_connection);   
+        {   
+            mysqli_close($db_connection);   
             return true;
         }
     }
