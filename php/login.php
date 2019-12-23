@@ -14,28 +14,32 @@ if(mysqli_connect_errno($con)){
 $email=filter_var(trim($_POST['email']), FILTER_VALIDATE_EMAIL); // replace null with $_POST and sanitization
 if($email !== false)
     $email=mysqli_real_escape_string($con,$email);
+else 
+    $email=null;
 $password=mysqli_real_escape_string($con,trim($_POST['pass'])); // replace null with $_POST and sanitization
 
 function login($email, $pass, $db_connection) {
-    // TODO: login logic here
-    $query = "SELECT * FROM Users WHERE email='".$email."'";
-    $res = $db_connection->query($query);
-    if($res!==false && mysqli_num_rows($res)!== 0){
-        $row=mysqli_fetch_assoc($res);
-        $pswd=$row['password'];
-        if(password_verify($pass, $pswd)){
-            // Return logged user
-            mysqli_free_result($res);
-            mysqli_close($db_connection);
-            return $row;
+    if ($email !== null){
+        // TODO: login logic here
+        $query = "SELECT * FROM Users WHERE email='".$email."'";
+        $res = $db_connection->query($query);
+        if($res!==false && mysqli_num_rows($res)!== 0){
+            $row=mysqli_fetch_assoc($res);
+            $pswd=$row['password'];
+            if(password_verify($pass, $pswd)){
+                // Return logged user
+                mysqli_free_result($res);
+                mysqli_close($db_connection);
+                return $row;
+            }
+            else{
+                echo "ERROR: wrong password. <br>"; //DEBUG
+            }
         }
         else{
-            echo "ERROR: wrong password. <br>"; //DEBUG
-        }
+            echo "ERROR: in database check. <br>";  //DEBUG
+        }    
     }
-    else{
-        echo "ERROR: in database check. <br>";  //DEBUG
-    }    
     mysqli_free_result($res);
     mysqli_close($db_connection);
     return false;
