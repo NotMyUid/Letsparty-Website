@@ -22,9 +22,13 @@ if(isset($_SESSION["user_id"])){
         echo("Unexpected error <br>");
     }
     // TODO: format it however you like in this page that shows profile data
-    echo $row['email']."<br>"; // replace null with $_POST and sanitization
-    echo $row['firstName']."<br>"; // replace null with $_POST and sanitization
-    echo $row['lastName']."<br>"; // replace null with $_POST and sanitization
+    
+    $_SESSION["firstName"]=$row['firstName'];
+    $_SESSION["lastName"]=$row['lastName'];
+    
+    echo "ID : ".$row['email']."<br>"; // replace null with $_POST and sanitization
+    echo "First name : ".$row['firstName']."<br>"; // replace null with $_POST and sanitization
+    echo "Last name : ".$row['lastName']."<br>"; // replace null with $_POST and sanitization
     session_destroy();  //DEBUG
 }
 else{
