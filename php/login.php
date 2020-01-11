@@ -1,7 +1,7 @@
 <?php
-
-require_once('../db/mysql_credentials.php');
 session_start();
+require_once('../db/mysql_credentials.php');
+
 // Add session control, header, ...
 // Open DBMS Server connection
 $con = new mysqli($mysql_host,$mysql_user,$mysql_pass,$mysql_db, $mysql_port);
@@ -49,9 +49,9 @@ function login($email, $pass, $db_connection) {
 $user = login($email, $password, $con);
 
 if ($user) {
-    // Welcome message
-    $_SESSION["user_id"]=$user['ID'];
-    echo "Welcome ". $user['email']."!";
+    $_SESSION["ID"]=$user['ID'];
+    // Head to welcome page
+    header('Location: ../html/Welcome.php');
 } else {
     // Error message
     echo "Wrong email or password";
