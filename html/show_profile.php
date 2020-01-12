@@ -63,13 +63,7 @@ session_start();
             </div>
         </div>
         <div class="footer">
-            <h2>About us: ⇩</h2>
-                If you're bored and you don't have any idea about how you're going to spend the rest of the day, you are in the right place! 
-                You just need to REGISTER or SIGN IN to look for all the events taking place near you. 
-                <br>
-                Once you register you can also decide to subscribe to the per-country-newsletter, so you couldn't miss a thing  !
-                <br>
-                YES, IT'S FREE!   
-        </div>        
+            <h2>Contact us: <a href="mailto:info@letsparty.staff.com">info@letsparty.staff.com</a></h2>
+        </div>       
     </body>
 </html>
