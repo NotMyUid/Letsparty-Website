@@ -18,8 +18,8 @@ session_start();
         </div> 
 
         <div class="navbar">
-            <a href="Index.html">Home</a>
-            <a href="#">Cities</a>
+            <a href="../html/Index.html">Home</a>
+            <a href="../html/Cities.php">Cities</a>
             <a href="#">Search</a>
             <a href="../html/show_profile.php" class="right">Profile</a>
         </div>

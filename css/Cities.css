@@ -50,6 +50,7 @@
   
   /* Main column */
   .main {
+    display: flex;
     flex: 70%; /* Set the width of the main content */
     background-color: white; /* White background color */
     padding: 20px; /* Some padding */
@@ -57,6 +58,16 @@
 
 .h1{
   text-align: center; /* Center text*/
+}
+
+.card {
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    font-size: small;
 }
 
 .h3{
