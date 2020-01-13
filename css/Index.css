@@ -26,6 +26,31 @@
     padding: 14px 20px; /* Add some padding */
     text-decoration: none; /* Remove underline */
   }
+
+  .navbar input[type=text] {
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-top: 5px;
+    margin-right: 16px;
+    font-size: 17px;
+  }
+
+  .navbar .search-container button {
+    float: right;
+    padding: 6px 10px;
+    margin-top: 5px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .navbar .search-container button:hover {
+    background: #ccc;
+  }
+  
   
   /* Right-aligned link */
   .navbar a.right {

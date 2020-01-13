@@ -23,10 +23,14 @@
         <div class="navbar">
             <a href="../html/Index.html">Home</a>
             <a href="../html/Cities.php">Cities</a>
-            <a href="#">Search</a>
             <a href="../html/show_profile.php" class="right">Profile</a>
+            <div class="search-container">
+                <form action="../php/search.php">
+                  <input type="text" placeholder="Search.." name="search">
+                  <button type="submit">Submit</button>
+                </form>
+              </div>
         </div>
-
         <h2><?php echo $city; ?> </h2>
         
         <div class="main">
@@ -45,7 +49,7 @@
                         $name=$row["name"];
                         ?>
                         <div class="card" onclick="location.href ='../php/Event.php?ID=<?php echo $ID; ?>'"> 
-                            <img src="../images/<?php echo $row["image"]; ?>.jpg" alt=<?php echo $name; ?> style="width: 100%;">
+                            <img src="../images/<?php echo $image; ?>.jpg" alt=<?php echo $name; ?> style="width: 100%;">
                             <h1><?php echo $name; ?></h1>
                         </div>         
                         <?php

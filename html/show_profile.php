@@ -18,9 +18,15 @@ session_start();
         <div class="navbar">
             <a href="../html/Index.html">Home</a>
             <a href="../html/Cities.php">Cities</a>
-            <a href="#">Search</a>
             <a href="../html/show_profile.php" class="right">Profile</a>
+            <div class="search-container">
+                <form action="../php/search.php">
+                  <input type="text" placeholder="Search.." name="search">
+                  <button type="submit">Submit</button>
+                </form>
+              </div>
         </div>
+
         <h2>
             Profile
         </h2>
@@ -35,7 +41,7 @@ session_start();
                     $ID=$_SESSION["ID"];
                     $query="SELECT * FROM Users WHERE ID ='".$ID."'";
                     $res = $con->query($query);
-                    if($res) 
+                    if($res->num_rows > 0) 
                     {   
                         $row=mysqli_fetch_assoc($res);
                     }

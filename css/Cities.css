@@ -27,6 +27,30 @@
     text-decoration: none; /* Remove underline */
   }
   
+  .navbar input[type=text] {
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-top: 5px;
+    margin-right: 16px;
+    font-size: 17px;
+  }
+
+  .navbar .search-container button {
+    float: right;
+    padding: 6px 10px;
+    margin-top: 5px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .navbar .search-container button:hover {
+    background: #ccc;
+  }
+  
   /* Right-aligned link */
   .navbar a.right {
     float: right; /* Float a link to the right */
@@ -37,6 +61,7 @@
     background-color: #ddd; /* Grey background color */
     color: black; /* Black text color */
   }
+  
 
   * {
     box-sizing: border-box;
@@ -63,7 +88,8 @@
 .card {
     cursor: pointer;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
+    width: 250px;
+    height: 250px;
     margin: auto;
     text-align: center;
     font-family: arial;

@@ -32,6 +32,30 @@
   text-decoration: none; /* Remove underline */
 }
 
+.navbar input[type=text] {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 5px;
+  margin-right: 16px;
+  font-size: 17px;
+}
+
+.navbar .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 5px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar .search-container button:hover {
+  background: #ccc;
+}
+
 /* Right-aligned link */
 .navbar a.right {
   float: right; /* Float a link to the right */
