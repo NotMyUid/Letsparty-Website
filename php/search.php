@@ -27,6 +27,7 @@
 
         
         <div class="main">Search results:
+        <p id=p1>
             <?php
                 // TODO: change credentials in the db/mysql_credentials.php file
                 require_once('../db/mysql_credentials.php');
@@ -39,7 +40,7 @@
 
                 function search($search, $db_connection) {
                     // TODO: search logic here
-                    $query="SELECT ID, name, image, from_date, price FROM Events WHERE name LIKE '%".$search."%' ORDER BY from_date";
+                    $query="SELECT * FROM Events WHERE name LIKE '%".$search."%' AND DATE(to_date) >= DATE(NOW()) ORDER BY from_date";
                     $array = $db_connection->query($query);
                     // Return array of results
                     return $array;
@@ -79,6 +80,7 @@
                     echo "No results found";
                 }
             ?>
+        </p>
         </div>
 
         <div class="footer">
