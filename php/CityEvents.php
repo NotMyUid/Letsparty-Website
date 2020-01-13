@@ -40,7 +40,7 @@
                 if ($con->connect_error) {
                     die("Connection failed: " . $conn->connect_error);
                 } 
-                $query="SELECT ID, name, image, from_date, price FROM Events WHERE city='".$city."' AND DATE(to_date) >= DATE(NOW())";
+                $query="SELECT ID, name, image, from_date, price FROM Events WHERE city='".$city."' AND DATE(to_date) >= DATE(NOW()) ORDER BY from_date";
                 $res = $con->query($query);
                 if ($res->num_rows > 0) {
                     while($row = $res->fetch_assoc()) {
