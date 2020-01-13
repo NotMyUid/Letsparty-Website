@@ -61,7 +61,7 @@ session_start();
         </div>
 
         <div class="footer">
-            <h2>Contact us: <a href="mailto:info@letsparty.staff.com">info@letsparty.staff.com</a></h2>
+            <h3>Contact us: <a href="mailto:info@letsparty.staff.com">info@letsparty.staff.com</a></h3>
         </div>      
 
     </body> 

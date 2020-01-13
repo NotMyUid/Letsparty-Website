@@ -18,6 +18,8 @@
 
 body {	
  background-color:black;
+ display: flex;
+ flex-direction: column;
 }
 
 /* Style the top navigation bar */
@@ -160,10 +162,12 @@ input[type="submit"]:active {
   text-align: center;
 }
 
+.h3{
+  font-size: smaller;
+}
+
 .footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
+    flex-shrink: 0;
     height: 50px;
     width: 100%;
     padding-bottom: 10px; /* Some padding */

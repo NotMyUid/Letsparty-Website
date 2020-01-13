@@ -55,6 +55,10 @@
     padding: 20px; /* Some padding */
   }
 
+.h3{
+  font-size: smaller;
+}
+
 .footer {
     position: fixed;
     left: 0;
