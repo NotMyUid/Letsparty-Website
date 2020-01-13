@@ -40,17 +40,28 @@
                 if ($con->connect_error) {
                     die("Connection failed: " . $conn->connect_error);
                 } 
-                $query="SELECT ID, name, image FROM Events WHERE city='".$city."' AND DATE(to_date) >= DATE(NOW())";
+                $query="SELECT ID, name, image, from_date, price FROM Events WHERE city='".$city."' AND DATE(to_date) >= DATE(NOW())";
                 $res = $con->query($query);
                 if ($res->num_rows > 0) {
                     while($row = $res->fetch_assoc()) {
                         $ID=$row["ID"];
                         $image=$row["image"];
                         $name=$row["name"];
+                        $from=$row["from_date"];
+                        $price=$row["price"];
                         ?>
-                        <div class="card" onclick="location.href ='../php/Event.php?ID=<?php echo $ID; ?>'"> 
-                            <img src="../images/<?php echo $image; ?>.jpg" alt=<?php echo $name; ?> style="width: 100%;">
-                            <h1><?php echo $name; ?></h1>
+                        <div class="flip-card" onclick="location.href ='../php/Event.php?ID=<?php echo $ID; ?>'"> 
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="../images/<?php echo $image; ?>.jpg" alt=<?php echo $name; ?> height="200px" width="100%" overflow="hidden">
+                                    <h1><?php echo $name; ?></h1>
+                                </div>
+                                <div class="flip-card-back">
+                                    <?php echo $name; ?>
+                                    <p>From: <?php echo $from; ?></p>
+                                    <p>Price: <?php if($price==null){echo "Free";}else{echo $price; echo "€";} ?></p>
+                                </div> 
+                            </div>   
                         </div>         
                         <?php
                     }

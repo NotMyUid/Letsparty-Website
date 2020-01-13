@@ -39,7 +39,7 @@
 
                 function search($search, $db_connection) {
                     // TODO: search logic here
-                    $query="SELECT ID, name, image FROM Events WHERE name LIKE '%".$search."%' ORDER BY from_date";
+                    $query="SELECT ID, name, image, from_date, price FROM Events WHERE name LIKE '%".$search."%' ORDER BY from_date";
                     $array = $db_connection->query($query);
                     // Return array of results
                     return $array;
@@ -54,11 +54,22 @@
                     $ID=$result["ID"];
                     $name=$result["name"];
                     $image=$result["image"];
+                    $from=$result["from_date"];
+                    $price=$result["price"];
                     ?>
-                    <div class="card" onclick="location.href ='../php/Event.php?ID=<?php echo $ID; ?>'"> 
-                        <img src="../images/<?php echo $image; ?>.jpg" alt=<?php echo $name; ?> style="width: 100%;">
-                        <h1><?php echo $name; ?></h1>
-                    </div>         
+                    <div class="flip-card" onclick="location.href ='../php/Event.php?ID=<?php echo $ID; ?>'"> 
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="../images/<?php echo $image; ?>.jpg" alt=<?php echo $name; ?> height="200px" width="100%" overflow="hidden">
+                                    <h1><?php echo $name; ?></h1>
+                                </div>
+                                <div class="flip-card-back">
+                                    <?php echo $name; ?>
+                                    <p>From: <?php echo $from; ?></p>
+                                    <p>Price: <?php if($price==null){echo "Free";}else{echo $price; echo "€";} ?></p>
+                                </div> 
+                            </div>   
+                        </div>     
                     <?php
                     }
                     mysqli_free_result($results);    

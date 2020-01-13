@@ -17,7 +17,7 @@
             <a href="../html/Cities.php">Cities</a>
             <a href="../html/show_profile.php" class="right">Profile</a>
             <div class="search-container">
-                <form action="../php/search.php">
+                 <form action="../php/search.php">
                   <input type="text" placeholder="Search.." name="search">
                   <button type="submit">Submit</button>
                 </form>
@@ -39,7 +39,7 @@
                     while($row = $res->fetch_assoc()) {
                         $name=$row["name"]; ?>
                         <div class="card" onclick="location.href ='../php/CityEvents.php?name=<?php echo $name; ?>'"> 
-                            <img src="../images/<?php echo $row["image"]; ?>.jpg" alt=<?php echo $name; ?> style="width:100%">
+                            <img src="../images/<?php echo $row["image"]; ?>.jpg" alt=<?php echo $name; ?> height="200px" width="100%" overflow="hidden">
                             <h1><?php echo $name; ?></h1>
                         </div>                        
                         <?php
