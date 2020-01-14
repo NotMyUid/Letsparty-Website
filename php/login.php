@@ -51,7 +51,7 @@ $user = login($email, $password, $con);
 if ($user) {
     $_SESSION["ID"]=$user['ID'];
     // Head to welcome page
-    header('Location: ../html/Welcome.php');
+    header('Location: ../html/index.php');
 } else {
     // Error message
     echo "Wrong email or password";

@@ -1,96 +1,260 @@
 
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
-*:focus {
-  outline: none;
+
+@import "https://fonts.googleapis.com/css?family=Lato:300,400,700";
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css";
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video
+{
+    margin:0;
+    padding:0;
+    border:0;
+    font-size:100%;
+    font:inherit;
+    vertical-align:baseline
+}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section
+{
+    display:block
+}
+
+body
+{
+    line-height:1
+}
+
+ol,ul
+{
+    list-style:none
+}
+
+blockquote,q
+{
+    quotes:none
+}
+
+blockquote:before,blockquote:after,q:before,q:after
+{
+    content:'';content:none
+}
+
+table
+{
+    border-collapse:collapse;border-spacing:0
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
 }
 
 .header {
-  padding: 80px; /* some padding */
-  text-align: center; /* center the text */
-  background: #1abc9c; /* green background */
-  color: white; /* white text color */
+    padding: 80px; /* some padding */
+    text-align: center; /* center the text */
+    background: #1abc9c; /* green background */
+    color: white; /* white text color */
 }
 
 /* Increase the font size of the <h1> element */
 .header h1 {
-  font-size: 40px;
+font-size: 40px;
 } 
 
-/* Style the top navigation bar */
-.navbar {
-  overflow: hidden; /* Hide overflow */
-  background-color: #333; /* Dark background color */
+body {
+    font: 14px/22px "Lato",Arial,sans-serif;
+}
+.lighter-text {
+    color: rgb(171, 176, 190);
+}
+.main-color-text {
+    color: rgb(99, 148, 248);
 }
 
-/* Style the navigation bar links */
-.navbar a {
-  float: left; /* Make sure that the links stay side-by-side */
-  display: block; /* Change the display to block, for responsive reasons (see below) */
-  color: white; /* White text color */
-  text-align: center; /* Center the text */
-  padding: 14px 20px; /* Add some padding */
-  text-decoration: none; /* Remove underline */
+nav .search-container {
+    margin-left: 10px;
+    float: inline-end;
+    font-size: 17px;
+    border: none;
+  }
+
+nav .search-container button{
+      cursor: pointer;
+  }
+  
+  .navbar-right .search-container button:hover {
+    background: #ccc;
+  }
+
+nav {
+    background: rgb(248, 248, 248) none repeat scroll 0 0;
+    font-size: 16px;
+    padding: 20px 0 40px;
+}
+nav .navbar-left {
+    float: left;
+}
+nav .navbar-right {
+    float: right;
+}
+nav ul li {
+    display: inline;
+    padding-left: 20px;
+}
+nav ul li a {
+    color: rgb(119, 119, 119);
+    text-decoration: none;
+}
+nav ul li a:hover {
+    color: rgb(0, 0, 0);
+}
+.container {
+    margin: auto;
+    width: 80%;
 }
 
-.navbar input[type=text] {
-  float: right;
-  padding: 6px;
-  border: none;
-  margin-top: 5px;
-  margin-right: 16px;
-  font-size: 17px;
+.badge {
+    background-color: rgb(99, 148, 248);
+    border-radius: 15px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    color: rgb(255, 255, 255);
+    display: inline-block;
+    font-size: 12px;
+    height: 25px;
+    line-height: 1;
+    padding: 6px 7px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 25px;
+}
+.shopping-cart {
+    background: rgb(255, 255, 255) none repeat scroll 0 0;
+    border-radius: 3px;
+    float: right;
+    padding: 20px;
+    position: relative;
+    width: 320px;
+}
+.shopping-cart .shopping-cart-header {
+    border-bottom: 1px solid rgb(232, 232, 232);
+    padding-bottom: 15px;
+}
+.shopping-cart .shopping-cart-header .shopping-cart-total {
+    float: right;
+}
+.shopping-cart .shopping-cart-items {
+    padding-top: 20px;
+}
+.shopping-cart .shopping-cart-items li {
+    margin-bottom: 18px;
+}
+.shopping-cart .shopping-cart-items img {
+    float: left;
+    margin-right: 12px;
+}
+.shopping-cart .shopping-cart-items .item-name {
+    display: block;
+    font-size: 16px;
+    padding-top: 10px;
+}
+.shopping-cart .shopping-cart-items .item-price {
+    color: rgb(99, 148, 248);
+    font-size: 12px;
+    margin-right: 8px;
+}
+.shopping-cart .shopping-cart-items .item-quantity {
+    color: rgb(171, 176, 190);
+    font-size: 13px;
+}
+.shopping-cart::after {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgb(255, 255, 255);
+    border-image: none;
+    border-style: solid;
+    border-width: 8px;
+    bottom: 100%;
+    content: " ";
+    height: 0;
+    left: 89%;
+    margin-left: -8px;
+    pointer-events: none;
+    position: absolute;
+    width: 0;
+}
+.cart-icon {
+    color: rgb(81, 87, 131);
+    float: left;
+    font-size: 24px;
+    margin-right: 7px;
+}
+.button {
+    background: rgb(99, 148, 248) none repeat scroll 0 0;
+    border-radius: 30px;
+    box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.15);
+    color: rgb(255, 255, 255);
+    display: block;
+    font-size: 16px;
+    margin: 25px 0 15px;
+    padding: 12px;
+    text-align: center;
+    text-decoration: none;
+}
+.button:hover {
+    background: rgb(114, 158, 249) none repeat scroll 0 0;
 }
 
-.navbar .search-container button {
-  float: right;
-  padding: 6px 10px;
-  margin-top: 5px;
-  margin-right: 16px;
-  background: #ddd;
-  font-size: 17px;
-  border: none;
-  cursor: pointer;
+.clearfix::after {
+    clear: both;
+    content: "";
+    display: table;
 }
 
-.navbar .search-container button:hover {
-  background: #ccc;
+ /* Main column */
+ .main {
+    flex: 70%; /* Set the width of the main content */
+    background-color: white; /* White background color */
+    padding: 20px; /* Some padding */
+  }
+
+.h1{
+  text-align: center; /* Center text*/
+  font-size: large;
 }
 
-/* Right-aligned link */
-.navbar a.right {
-  float: right; /* Float a link to the right */
+.h3{
+  font-size: smaller;
 }
 
-/* Change color on hover/mouse-over */
-.navbar a:hover {
-  background-color: #ddd; /* Grey background color */
-  color: black; /* Black text color */
-}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    padding-bottom: 10px; /* Some padding */
+    text-align: center; /* Center text*/
+    background: #ddd; /* Grey background */
+  }
 
-body {	
-  background-color:black;
-  display: flex;
-  flex-direction: column;
- }
 
 
 #user-box {
-  position: relative;
   top: auto;
   margin: 5% auto;
   width: 600px;
-  height: 550px;
+  height: 510px;
   background: #FFF;
-  border-radius: 2px;
+  border-radius: 3px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
-.left {
-  position: absolute;
-  top: 0;
-  left: 0;
+.center {
+  top: 10px;
+  left: 50px;
   box-sizing: border-box;
-  padding: 40px;
+  padding: 80px;
+    padding-left: 200px;
   width: 300px;
   height: 400px;
 }
@@ -101,30 +265,6 @@ h1 {
   font-size: 28px;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-  display: block;
-  box-sizing: border-box;
-  margin-bottom: 20px;
-  padding: 4px;
-  width: 220px;
-  height: 32px;
-  border: none;
-  border-bottom: 1px solid #AAA;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  font-size: 15px;
-  transition: 0.2s ease;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus {
-  border-bottom: 2px solid #16a085;
-  color: #16a085;
-  transition: 0.2s ease;
-}
 
 input[type="submit"] {
   margin-top: 28px;
@@ -154,15 +294,11 @@ input[type="submit"]:active {
   transition: 0.1s ease;
 }
 
-.h3{
-  font-size: smaller;
-}
-
-.footer {
-  flex-shrink: 0;
-  height: 50px;
-  width: 100%;
-  padding-bottom: 10px; /* Some padding */
-  text-align: center; /* Center text*/
-  background: #ddd; /* Grey background */
+.left {
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  padding: 40px;
+  width: 300px;
+  height: 400px;
 }
