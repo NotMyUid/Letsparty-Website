@@ -1,27 +1,13 @@
 <?php
-    session_start();
-    require_once('../db/mysql_credentials.php');
-    $con = new mysqli($mysql_host,$mysql_user,$mysql_pass,$mysql_db,$mysql_port);
+    include '../php/getSession.php';
     // Get profile data from database (check current session)
-    if(isset($_SESSION['ID']) && !empty($_SESSION['ID']))
-    {
-        $ID=$_SESSION["ID"];
-        $query="SELECT * FROM Users WHERE ID ='".$ID."'";
-        $res = $con->query($query);
-        if($res->num_rows > 0) 
-        {   
-            $row=mysqli_fetch_assoc($res);
-        }
-        mysqli_free_result($res);                                                               
-    }
-    else{
-        ?>
+    if(!isset($sessionID)){
+      ?>
         <script>
             window.location.href = '../html/LoginAndRegistration.php';
         </script>
         <?php
     }
-    mysqli_close($con);   
 ?>
 <!DOCTYPE html>
 <html>
@@ -102,68 +88,19 @@
     <!--end navbar-->
     <script src="../js/index.js"></script>
 
-    <script type="text/javascript">
-            var badge=0;
-            var total=0;
-            var badgeSpan = document.getElementById("num");
-            var badgeSpan2 = document.getElementById("num2");
-            var totalSpan = document.getElementById("total");
-            <?php
-            if(isset($_SESSION["cart"])){
-              ?>
-              var cartArray= <?php echo json_encode($_SESSION["cart"], JSON_PRETTY_PRINT);?>;
-              var wrapper = $('#wrapper'), container;
-              Object.keys(cartArray).forEach(function (key){
-                badge+=cartArray[key].quantity;
-                total+=cartArray[key].price*cartArray[key].quantity;
-              });
-              <?php
-            }
-            ?>
-            badgeSpan.textContent=badge;
-            badgeSpan2.textContent=badge;
-            totalSpan.textContent=total+"€";
-    </script>
-
-    <script type="text/javascript">
-    function showCart(a){
-        var cart = document.getElementById("nav-right");
-        var profile = document.getElementById("profile");
-        var login = document.getElementById("login");
-        if(a){
-          profile.style.display="block";
-          login.style.display="none";
-          cart.style.display="block";
-        }      
-        else
-        {
-          login.style.display="block";
-          profile.style.display="none";
-          cart.style.display="none";
-        }
-      }
-    </script>
-
-
     <?php
-      if(isset($row)) 
-      { 
-        ?>     
-        <script type="text/javascript">
-          showCart(true);
-          </script>
-        <?php
-      }
-      else
-      {
-        ?>
-        <script type="text/javascript">
-        showCart(false);
-        </script>
-        <?php
-      }
+    include '../php/cart.php';
     ?>
 
+      <script type="text/javascript">
+        function Logout(){
+          window.location.href = '../php/logout.php';
+        }
+
+        function Update(){
+          window.location.href = '../html/UpdateProfile.php';
+        }
+      </script>
         <h1>
             Profile
         </h1>
@@ -172,12 +109,14 @@
             First name: <?php echo $row["firstName"] ?><br>
             Last name: <?php echo $row["lastName"] ?><br>
             City: <?php echo $row["city"] ?><br>
-            About me: <?php echo $row["about_me"] ?><br>
-            <p class=logout>
-            <a href="../php/logout.php">Logout</a>
+            About me: <?php echo $row["about_me"] ?><br><br>
+            <p class=logout  style="display: inline-block;padding-right: 10px;">
+            <button type="submit" onclick="Logout()">Logout</button>
+        <!--<a href="../php/logout.php">Logout</a>-->
             </p>
-            <p class=update>
-            <a href="../html/UpdateProfile.php">Modify</a>
+            <p class=update style="display: inline-block;padding-right: 10px;">
+            <button type="submit" onclick="Update()">Update</button>
+        <!--<a href="../html/UpdateProfile.php">Modify</a>-->
             </p>
             </div>
         </div>

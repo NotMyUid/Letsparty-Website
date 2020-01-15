@@ -59,6 +59,10 @@ font-size: 40px;
 
 body {
     font: 14px/22px "Lato",Arial,sans-serif;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
 }
 .lighter-text {
     color: rgb(171, 176, 190);
@@ -209,9 +213,10 @@ nav ul li a:hover {
     display: table;
 }
 
-.h1{
-    text-align: center; /* Center text*/
-    font-size: large;
+    h1 {
+    margin: 0 0 20px 0;
+    font-weight: 300;
+    font-size: 28px;
   }
   
   .h3{
@@ -232,6 +237,5 @@ nav ul li a:hover {
      /* Main column */
  .main {
     flex: 70%; /* Set the width of the main content */
-    background-color: white; /* White background color */
     padding: 20px; /* Some padding */
   }

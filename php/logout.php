@@ -3,5 +3,5 @@
     // remove all session variables
     // destroy the session
     session_destroy();
-    header('Location: ../html/Index.html');
+    header('Location: ../html/index.php');
 ?>

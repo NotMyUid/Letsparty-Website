@@ -18,9 +18,10 @@
     font-size: small;
 }
 
-.h1{
-  text-align: center; /* Center text*/
-  font-size: large;
+h1 {
+  margin: 0 0 20px 0;
+  font-weight: 300;
+  font-size: 28px;
 }
 
 .h3{

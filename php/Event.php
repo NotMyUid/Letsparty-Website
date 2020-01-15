@@ -1,28 +1,10 @@
 <?php
-    session_start();
+    include '../php/getSession.php';
     if (isset($_GET["ID"])) {
         $ID=$_GET["ID"];
     }
     else{
         header("../html/CityEvents.php");
-    }
-
-    require_once('../db/mysql_credentials.php');
-    $con = new mysqli($mysql_host,$mysql_user,$mysql_pass,$mysql_db, $mysql_port);
-    if(isset($_SESSION['ID']))
-    {
-      $sessionID=$_SESSION["ID"];
-      $query="SELECT * FROM Users WHERE ID ='".$sessionID."'";
-      $res = $con->query($query);
-      if($res) 
-      {      
-          $row=mysqli_fetch_assoc($res);
-          mysqli_free_result($res);
-      }
-      else{
-          echo("Unexpected error <br>");
-      }                 
-      mysqli_close($con);
     }
 ?>
 <!DOCTYPE html>
@@ -30,12 +12,12 @@
   <head>
     <meta charset="UTF-8">
     <title>Let's Party</title>  
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/UpdateProfile.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
 
-  <body>
+  <body background="../images/<?php echo $event["image"]; ?>.jpg">
     <!-- Navigation Bar start -->
     <nav>
     <div class="container">
@@ -104,104 +86,37 @@
     <!--end navbar-->
     <script src="../js/index.js"></script>
 
-    <script type="text/javascript">
-            var badge=0;
-            var total=0;
-            var badgeSpan = document.getElementById("num");
-            var badgeSpan2 = document.getElementById("num2");
-            var totalSpan = document.getElementById("total");
-            <?php
-            if(isset($_SESSION["cart"])){
-              ?>
-              var cartArray= <?php echo json_encode($_SESSION["cart"], JSON_PRETTY_PRINT);?>;
-              var wrapper = $('#wrapper'), container;
-              Object.keys(cartArray).forEach(function (key){
-                badge+=cartArray[key].quantity;
-                total+=cartArray[key].price*cartArray[key].quantity;
-              });
-              <?php
-            }
-            ?>
-            badgeSpan.textContent=badge;
-            badgeSpan2.textContent=badge;
-            totalSpan.textContent=total+"€";
-    </script>
-
-    <script type="text/javascript">
-    function showCart(a){
-        var cart = document.getElementById("nav-right");
-        var profile = document.getElementById("profile");
-        var login = document.getElementById("login");
-        if(a){
-          profile.style.display="block";
-          login.style.display="none";
-          cart.style.display="block";
-        }      
-        else
-        {
-          login.style.display="block";
-          profile.style.display="none";
-          cart.style.display="none";
-        }
-      }
-    </script>
-
-
     <?php
-      if(isset($row)) 
-      { 
-        ?>     
-        <script type="text/javascript">
-          showCart(true);
-          </script>
-        <?php
-      }
-      else
-      {
-        ?>
-        <script type="text/javascript">
-        showCart(false);
-        </script>
-        <?php
-      }
+    include '../php/cart.php';
     ?>
 
         <div class="main">
-            <?php
-                require_once('../db/mysql_credentials.php');
-                $con = new mysqli($mysql_host,$mysql_user,$mysql_pass,$mysql_db,$mysql_port);
-                if ($con->connect_error) {
-                    die("Connection failed: " . $conn->connect_error);
-                } 
-                $query="SELECT * FROM Events WHERE ID='".$ID."'";
-                $res = $con->query($query);
-                if ($res->num_rows > 0) {
-                    $row = $res->fetch_assoc();
-                    mysqli_free_result($res); 
-                    ?>
-                    <h1><?php echo $row['name']; ?></h1>
-                    <?php
-                    echo "From: ";
-                    echo $row["from_date"];
-                    echo "<br>";
-                    echo "To: ";
-                    echo $row["to_date"];
-                    echo "<br>";
-                    echo "Price: ";
-                    echo $row["price"];
-                    echo "€";
-                    echo "<br>";
-                    echo "City: ";
-                    echo $row["city"];
-                    echo "<br>"; ?>
-                    <button class="button" id="addToCart">Add to cart</button>
-                    <?php
-                }
-                else{
-                    echo "There are no events for this city.";
-                }
-                mysqli_close($con);   
-                ?>
+          <h1><?php echo $event['name']; ?></h1>
+          <div id="user-box">
+            <div class="left">
+              <?php
+              if(isset($event)){
+                echo "From: ";
+                echo $event["from_date"];
+                echo "<br>";
+                echo "To: ";
+                echo $event["to_date"];
+                echo "<br>";
+                echo "Price: ";
+                echo $event["price"];
+                echo "€";
+                echo "<br>";
+                echo "City: ";
+                echo $event["city"];
+                echo "<br>"; ?>
+                <button class="button" id="addToCart">Add to cart</button>
+                <?php
+              }else{
+                echo "There are no events for this city.";
+              }
+              ?>                
+            </div>
+          </div>
         </div>
 
         <script type="text/javascript"> 

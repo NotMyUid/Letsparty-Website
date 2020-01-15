@@ -1,11 +1,11 @@
 @import url(../css/base.css);
 
 #user-box {
+    background: rgba(255, 255, 255, 0.9);
     top: auto;
     margin: 5% auto;
     width: 600px;
     height: 550px;
-    background: #FFF;
     border-radius: 2px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
@@ -22,6 +22,7 @@
 }
 
 h1 {
+  color: #FFF;
   margin: 0 0 20px 0;
   font-weight: 300;
   font-size: 28px;
