@@ -54,13 +54,13 @@
             </div>
           </div> <!--end shopping-cart-header -->
 
-          <ul class="shopping-cart-items">
+          <ul class="shopping-cart-items" id="box">
           
-          
-            <li class="clearfix" id="box">
+          <!--  
+            <li class="clearfix">
 
             </li>
-          <!--  
+         
             <li class="clearfix">
               <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item2.jpg" alt="item1" />
               <span class="item-name">KS Automatic Mechanic...</span>
