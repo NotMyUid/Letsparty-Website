@@ -135,6 +135,7 @@ nav ul li a:hover {
     padding: 20px;
     position: relative;
     width: 320px;
+    display: none;
 }
 .shopping-cart .shopping-cart-header {
     border-bottom: 1px solid rgb(232, 232, 232);
