@@ -102,12 +102,12 @@
                 $query="SELECT ID, name, image, from_date, price FROM Events WHERE city='".$city."' AND DATE(to_date) >= DATE(NOW()) ORDER BY from_date";
                 $res = $con->query($query);
                 if ($res->num_rows > 0) {
-                    while($row = $res->fetch_assoc()) {
-                        $ID=$row["ID"];
-                        $image=$row["image"];
-                        $name=$row["name"];
-                        $from=$row["from_date"];
-                        $price=$row["price"];
+                    while($event = $res->fetch_assoc()) {
+                        $ID=$event["ID"];
+                        $image=$event["image"];
+                        $name=$event["name"];
+                        $from=$event["from_date"];
+                        $price=$event["price"];
                         ?>
                         <div class="flip-card" onclick="location.href ='../php/Event.php?ID=<?php echo $ID; ?>'"> 
                             <div class="flip-card-inner">

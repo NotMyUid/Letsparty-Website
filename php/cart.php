@@ -5,10 +5,9 @@ var badgeSpan = document.getElementById("num");
 var badgeSpan2 = document.getElementById("num2");
 var totalSpan = document.getElementById("total");
 <?php
-if(isset($_SESSION["cart"]) && !empty($SESSION["cart"])){
+if(isset($_SESSION["cart"])){
     ?>
     var cartArray= <?php echo json_encode($_SESSION["cart"], JSON_PRETTY_PRINT);?>;
-    var wrapper = $('#wrapper'), container;
     Object.keys(cartArray).forEach(function (key){
     badge+=cartArray[key].quantity;
     total+=cartArray[key].price*cartArray[key].quantity;
@@ -39,7 +38,7 @@ function showCart(a){
 </script>
 
 <?php
-      if(isset($row)) 
+      if(isset($user)) 
       { 
         ?>     
         <script type="text/javascript">

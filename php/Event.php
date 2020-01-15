@@ -6,6 +6,16 @@
     else{
         header("../html/CityEvents.php");
     }
+    require_once('../db/mysql_credentials.php');
+    $con = new mysqli($mysql_host,$mysql_user,$mysql_pass,$mysql_db, $mysql_port);
+    $query="SELECT * FROM Events WHERE ID='".$ID."'";
+    $res = $con->query($query);
+    if ($res->num_rows > 0) {
+        $event = $res->fetch_assoc();
+        mysqli_free_result($res); 
+    }else{
+      echo("Unexpected error <br>");
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -109,7 +119,7 @@
                 echo "City: ";
                 echo $event["city"];
                 echo "<br>"; ?>
-                <button class="button" id="addToCart">Add to cart</button>
+                <button class="button" onclick="location.href ='../php/addToCart.php?ID=<?php echo $ID; ?>'">Add to cart</button>
                 <?php
               }else{
                 echo "There are no events for this city.";
@@ -118,21 +128,7 @@
             </div>
           </div>
         </div>
-
-        <script type="text/javascript"> 
-            document.getElementById("addToCart").onclick=function(){
-                <?php 
-                if(!isset($_SESSION["cart"]))
-                    $_SESSION['cart'] = array();
-                if(!isset($_SESSION["cart"][$ID]))
-                    $_SESSION['cart'][$ID] = array('image' => $row["image"], 'name' => $row["name"], "price" => $row["price"], "quantity" => 1);
-                else
-                    $_SESSION['cart'][$ID]["quantity"]++;
-                ?>
-                window.location.href='../html/index.php';
-            }
-        </script>
-
+          
         <div class="footer">
             <h3>Contact us: <a href="mailto:info@letsparty.staff.com">info@letsparty.staff.com</a></h3>
         </div>          

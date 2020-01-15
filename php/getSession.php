@@ -9,11 +9,11 @@
       $res = $con->query($query);
       if($res) 
       {      
-          $row=mysqli_fetch_assoc($res);?>
+          $user=mysqli_fetch_assoc($res);?>
           <script type="text/javascript">
           if(document.referrer.includes("Login")){
             document.addEventListener('DOMContentLoaded', function() {
-                alert("Welcome <?php echo $row['firstName']; ?>");
+                alert("Welcome <?php echo $user['firstName']; ?>");
             }, false);
           }
           </script><?php

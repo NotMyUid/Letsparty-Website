@@ -2,11 +2,7 @@
     include '../php/getSession.php';
     // Get profile data from database (check current session)
     if(!isset($sessionID)){
-      ?>
-        <script>
-            window.location.href = '../html/LoginAndRegistration.php';
-        </script>
-        <?php
+      echo"<script>window.location.href = '../html/LoginAndRegistration.php';</script>";
     }
 ?>
 <!DOCTYPE html>
@@ -106,10 +102,10 @@
         </h1>
         <div id="user-box">
             <div class="left">
-            First name: <?php echo $row["firstName"] ?><br>
-            Last name: <?php echo $row["lastName"] ?><br>
-            City: <?php echo $row["city"] ?><br>
-            About me: <?php echo $row["about_me"] ?><br><br>
+            First name: <?php echo $user["firstName"] ?><br>
+            Last name: <?php echo $user["lastName"] ?><br>
+            City: <?php echo $user["city"] ?><br>
+            About me: <?php echo $user["about_me"] ?><br><br>
             <p class=logout  style="display: inline-block;padding-right: 10px;">
             <button type="submit" onclick="Logout()">Logout</button>
         <!--<a href="../php/logout.php">Logout</a>-->
