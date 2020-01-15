@@ -16,14 +16,7 @@
       $res = $con->query($query);
       if($res) 
       {      
-          $row=mysqli_fetch_assoc($res);?>
-          <script type="text/javascript">
-          if(document.referrer.includes("Login")){
-            document.addEventListener('DOMContentLoaded', function() {
-                alert("Welcome <?php echo $row['firstName']; ?>");
-            }, false);
-          }
-          </script><?php
+          $row=mysqli_fetch_assoc($res);
           mysqli_free_result($res);
       }
       else{
@@ -43,11 +36,6 @@
   </head>
 
   <body>
-    <div class="header">
-      <h1>Let's Party</h1>
-      <p>Find best parties in your city!</p>
-    </div> 
-
     <!-- Navigation Bar start -->
     <nav>
     <div class="container">

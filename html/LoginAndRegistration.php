@@ -1,4 +1,4 @@
-<?php
+﻿<?php
     session_start();
     require_once('../db/mysql_credentials.php');
     $con = new mysqli($mysql_host,$mysql_user,$mysql_pass,$mysql_db, $mysql_port);
@@ -9,14 +9,7 @@
       $res = $con->query($query);
       if($res) 
       {      
-          $row=mysqli_fetch_assoc($res);?>
-          <script type="text/javascript">
-          if(document.referrer.includes("Login")){
-            document.addEventListener('DOMContentLoaded', function() {
-                alert("Welcome <?php echo $row['firstName']; ?>");
-            }, false);
-          }
-          </script><?php
+          $row=mysqli_fetch_assoc($res);
           mysqli_free_result($res);
       }
       else{
@@ -30,17 +23,12 @@
   <head>
     <meta charset="UTF-8">
     <title>Let's Party</title>  
-    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/LoginAndRegistration.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
 
   <body>
-    <div class="header">
-      <h1>Let's Party</h1>
-      <p>Find best parties in your city!</p>
-    </div> 
-
     <!-- Navigation Bar start -->
     <nav>
     <div class="container">
@@ -169,29 +157,55 @@
         </script>
         <?php
       }
-    ?>
+    ?>       
+        
+        
+        <div id="login-box">
+        
+            <div class="signup">
+                    
+                    <h1>Sign up</h1>
+                    
+                    <form action="../php/registration.php" method="POST">
+                    
+                        <label for="firstname">First name</label>           <input type="text" name="firstname" placeholder="First name">
+                        <label for="lastname">Last name</label>             <input type="text" name="lastname" placeholder="Last name">
+                        <label for="email">E-mail</label>                   <input type="email" name="email" placeholder="E-mail">
+                        <label for="pass">Password</label>                  <input type="password" name="pass" placeholder="Password">
+                        <label for="confirm">Confirm Password</label>       <input type="password" name="confirm" placeholder="Retype password">
 
-    <div class="main">
-      <h1>Next Parties:</h1>
-        <div id="div1">
-          <script>
-              //funzione che mostra i prossimi eventi
-          </script>
+                        <!-- TODO: Add additional fields here -->
+
+                        <input type="submit" value="Submit">
+            
+                    </form>
+                
+            </div>
+                
+        
+            <div class="login">
+                
+                <span class="loginwith">Sign in</span>
+                
+                <form action="../php/login.php" method="POST">
+                
+                    Email<input type="email" name="email" placeholder="E-mail">
+                    Password<input type="password" name="pass" placeholder="Password">
+                
+                    <input type="submit" value="Submit">
+            
+                </form>
+            
+            </div>
+
+            <div class="or">OR</div>
+            
         </div>
-    </div>
-    
-    <h2>About us: ⇩</h2>
-          If you're bored and you don't have any idea about how you're going to spend the rest of the day, you are in the right place! 
-          You just need to REGISTER or SIGN IN to look for all the events taking place near you. 
-          <br>
-          Once you register you can also decide to subscribe to the per-country-newsletter, so you couldn't miss a thing  !
-          <br>
-          YES, IT'S FREE!            
-          <br><br><br><br>
-
-    <div class="footer">
-        <h3>Contact us: <a href="mailto:info@letsparty.staff.com">info@letsparty.staff.com</a></h3>
-    </div>
-
-  </body>
+        
+        
+        <div class="footer">
+            <h3>Contact us: <a href="mailto:info@letsparty.staff.com">info@letsparty.staff.com</a></h3>
+        </div>
+                   
+    </body>
 </html>

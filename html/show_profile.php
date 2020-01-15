@@ -1,22 +1,27 @@
 <?php
     session_start();
     require_once('../db/mysql_credentials.php');
-    $con = new mysqli($mysql_host,$mysql_user,$mysql_pass,$mysql_db, $mysql_port);
-    if(isset($_SESSION['ID']))
+    $con = new mysqli($mysql_host,$mysql_user,$mysql_pass,$mysql_db,$mysql_port);
+    // Get profile data from database (check current session)
+    if(isset($_SESSION['ID']) && !empty($_SESSION['ID']))
     {
-      $sessionID=$_SESSION["ID"];
-      $query="SELECT * FROM Users WHERE ID ='".$sessionID."'";
-      $res = $con->query($query);
-      if($res) 
-      {      
-          $row=mysqli_fetch_assoc($res);
-          mysqli_free_result($res);
-      }
-      else{
-          echo("Unexpected error <br>");
-      }                 
-      mysqli_close($con);
+        $ID=$_SESSION["ID"];
+        $query="SELECT * FROM Users WHERE ID ='".$ID."'";
+        $res = $con->query($query);
+        if($res->num_rows > 0) 
+        {   
+            $row=mysqli_fetch_assoc($res);
+        }
+        mysqli_free_result($res);                                                               
     }
+    else{
+        ?>
+        <script>
+            window.location.href = '../html/LoginAndRegistration.php';
+        </script>
+        <?php
+    }
+    mysqli_close($con);   
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,11 +34,6 @@
   </head>
 
   <body>
-    <div class="header">
-      <h1>Let's Party</h1>
-      <p>Find best parties in your city!</p>
-    </div> 
-
     <!-- Navigation Bar start -->
     <nav>
     <div class="container">
@@ -169,30 +169,6 @@
         </h1>
         <div id="user-box">
             <div class="left">
-            <?php
-                require_once('../db/mysql_credentials.php');
-                $con = new mysqli($mysql_host,$mysql_user,$mysql_pass,$mysql_db,$mysql_port);
-                // Get profile data from database (check current session)
-                if(isset($_SESSION['ID']) && !empty($_SESSION['ID']))
-                {
-                    $ID=$_SESSION["ID"];
-                    $query="SELECT * FROM Users WHERE ID ='".$ID."'";
-                    $res = $con->query($query);
-                    if($res->num_rows > 0) 
-                    {   
-                        $row=mysqli_fetch_assoc($res);
-                    }
-                    mysqli_free_result($res);                                                               
-                }
-                else{
-                    ?>
-                    <script>
-                        window.location.href = '../html/LoginAndRegistration.html';
-                    </script>
-                    <?php
-                }
-                mysqli_close($con);   
-            ?>
             First name: <?php echo $row["firstName"] ?><br>
             Last name: <?php echo $row["lastName"] ?><br>
             City: <?php echo $row["city"] ?><br>

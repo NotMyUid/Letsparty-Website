@@ -29,11 +29,6 @@
   </head>
 
   <body>
-    <div class="header">
-      <h1>Let's Party</h1>
-      <p>Find best parties in your city!</p>
-    </div> 
-
     <!-- Navigation Bar start -->
     <nav>
     <div class="container">
@@ -166,7 +161,7 @@
 
         <h1>Cities</h1>
         
-        <div class="main">
+        <div class="main" >
             <?php
                 require_once('../db/mysql_credentials.php');
                 $con = new mysqli($mysql_host,$mysql_user,$mysql_pass,$mysql_db,$mysql_port);
@@ -179,7 +174,7 @@
                     while($row = $res->fetch_assoc()) {
                         $name=$row["name"]; ?>
                         <div class="card" onclick="location.href ='../php/CityEvents.php?name=<?php echo $name; ?>'"> 
-                            <img src="../images/<?php echo $row["image"]; ?>.jpg" alt=<?php echo $name; ?> height="200px" width="100%" overflow="hidden">
+                            <img src="../images/<?php echo $row["image"]; ?>.jpg" alt=<?php echo $name; ?> height="200px" width="200px" overflow="hidden">
                             <h1><?php echo $name; ?></h1>
                         </div>                        
                         <?php

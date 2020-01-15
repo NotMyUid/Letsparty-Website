@@ -1,73 +1,4 @@
-
-.header {
-  padding: 80px; /* some padding */
-  text-align: center; /* center the text */
-  background: #1abc9c; /* green background */
-  color: white; /* white text color */
-}
-
-  /* Increase the font size of the <h1> element */
-  .header h1 {
-    font-size: 40px;
-  } 
-
-  /* Style the top navigation bar */
-.navbar {
-    overflow: hidden; /* Hide overflow */
-    background-color: #333; /* Dark background color */
-  }
-  
-  /* Style the navigation bar links */
-  .navbar a {
-    float: left; /* Make sure that the links stay side-by-side */
-    display: block; /* Change the display to block, for responsive reasons (see below) */
-    color: white; /* White text color */
-    text-align: center; /* Center the text */
-    padding: 14px 20px; /* Add some padding */
-    text-decoration: none; /* Remove underline */
-  }
-
-  .navbar input[type=text] {
-    float: right;
-    padding: 6px;
-    border: none;
-    margin-top: 5px;
-    margin-right: 16px;
-    font-size: 17px;
-  }
-
-  .navbar .search-container button {
-    float: right;
-    padding: 6px 10px;
-    margin-top: 5px;
-    margin-right: 16px;
-    background: #ddd;
-    font-size: 17px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .navbar .search-container button:hover {
-    background: #ccc;
-  }
-  
-  
-  /* Right-aligned link */
-  .navbar a.right {
-    float: right; /* Float a link to the right */
-  }
-  
-  /* Change color on hover/mouse-over */
-  .navbar a:hover {
-    background-color: #ddd; /* Grey background color */
-    color: black; /* Black text color */
-  }
-
-body {	
-  background-color:black;
-  display: flex;
-  flex-direction: column;
- }
+@import url(../css/base.css);
 
 #login-box {
   position: relative;
@@ -96,30 +27,6 @@ h1 {
   font-size: 28px;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-  display: block;
-  box-sizing: border-box;
-  margin-bottom: 20px;
-  padding: 4px;
-  width: 220px;
-  height: 32px;
-  border: none;
-  border-bottom: 1px solid #AAA;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  font-size: 15px;
-  transition: 0.2s ease;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus {
-  border-bottom: 2px solid #16a085;
-  color: #16a085;
-  transition: 0.2s ease;
-}
 
 input[type="submit"] {
   margin-top: 28px;
@@ -134,6 +41,7 @@ input[type="submit"] {
   text-transform: uppercase;
   transition: 0.1s ease;
   cursor: pointer;
+  margin-inline-start: 48px;
 }
 
 input[type="submit"]:hover,
@@ -180,16 +88,3 @@ input[type="submit"]:active {
   color: black;
   text-align: center;
 }
-
-.h3{
-  font-size: smaller;
-}
-
-.footer {
-    flex-shrink: 0;
-    height: 50px;
-    width: 100%;
-    padding-bottom: 10px; /* Some padding */
-    text-align: center; /* Center text*/
-    background: #ddd; /* Grey background */
-  }

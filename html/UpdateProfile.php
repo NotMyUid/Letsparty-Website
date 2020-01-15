@@ -29,11 +29,6 @@
   </head>
 
   <body>
-    <div class="header">
-      <h1>Let's Party</h1>
-      <p>Find best parties in your city!</p>
-    </div> 
-
     <!-- Navigation Bar start -->
     <nav>
     <div class="container">
