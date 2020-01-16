@@ -82,6 +82,7 @@
       </div> <!--end container -->
     </nav>
     <!--end navbar-->
+    <br><br>
     <script src="../js/index.js"></script>
 
     <?php

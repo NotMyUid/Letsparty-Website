@@ -48,8 +48,10 @@ table
 .header {
     padding: 80px; /* some padding */
     text-align: center; /* center the text */
-    background: #1abc9c; /* green background */
-    color: white; /* white text color */
+    background-image: url('../images/bigLogo2.jpg'); /* green background */
+    background-position: center;
+    background-repeat: no-repeat;
+    
 }
 
 /* Increase the font size of the <h1> element */
@@ -87,10 +89,12 @@ nav .search-container button{
   }
 
 nav {
-    background: rgb(248, 248, 248) none repeat scroll 0 0;
     font-size: 16px;
     padding: 20px 0 40px;
+    background-image: linear-gradient(to right,
+rgba(255,0,0,0), rgb(46, 81, 162),rgba(255,0,0,0));
 }
+
 nav .navbar-left {
     float: left;
 }
@@ -102,7 +106,7 @@ nav ul li {
     padding-left: 20px;
 }
 nav ul li a {
-    color: rgb(119, 119, 119);
+    color: rgb(75, 69, 69);
     text-decoration: none;
 }
 nav ul li a:hover {

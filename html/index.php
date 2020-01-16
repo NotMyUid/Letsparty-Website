@@ -6,15 +6,14 @@
   <head>
     <meta charset="UTF-8">
     <title>Let's Party</title>  
-    <link rel="stylesheet" href="../css/base.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="../css/Cities.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
 
   <body>
     <div class="header">
-      <h1>Let's Party</h1>
-      <p>Find best parties in your city!</p>
     </div> 
 
     <!-- Navigation Bar start -->
@@ -83,6 +82,7 @@
       </div> <!--end container -->
     </nav>
     <!--end navbar-->
+    <br><br>
     <script src="../js/index.js"></script>
 
     <?php
@@ -90,14 +90,52 @@
     ?>
     
 
-    <div class="main">
-      <h1>Next Parties:</h1>
-        <div id="div1">
-          <script>
+    <h1>Next Parties:</h1>       
+    <div class="main">       
+              <?php
+              require_once('../db/mysql_credentials.php');
               //funzione che mostra i prossimi eventi
-          </script>
-        </div>
+                $con = new mysqli($mysql_host,$mysql_user,$mysql_pass,$mysql_db,$mysql_port);
+                if ($con->connect_error) {
+                    die("Connection failed: " . $con->connect_error);
+                } 
+                $query="SELECT * FROM Events WHERE DATE(to_date) >= DATE(NOW()) ORDER BY from_date";
+                $results = $con->query($query);
+                if(count($results)>0) {
+                  foreach ($results as $result) {
+                  // Format as you like and print search results
+                  $ID=$result["ID"];
+                  $name=$result["name"];
+                  $image=$result["image"];
+                  $from=$result["from_date"];
+                  $price=$result["price"];
+                  ?>
+                  <div class="flip-card" onclick="location.href ='../php/Event.php?ID=<?php echo $ID; ?>'"> 
+                          <div class="flip-card-inner">
+                              <div class="flip-card-front">
+                                  <img src="../images/<?php echo $image; ?>.jpg" alt=<?php echo $name; ?> height="200px" width="100%" overflow="hidden">
+                                  <h1><?php echo $name; ?></h1>
+                              </div>
+                              <div class="flip-card-back">
+                                  <?php echo $name; ?>
+                                  <p>From: <?php echo $from; ?></p>
+                                  <p>Price: <?php if($price==null){echo "Free";}else{echo $price; echo "€";} ?></p>
+                              </div> 
+                          </div>   
+                      </div>     
+                  <?php
+                  }
+                  } else {
+                      // No matches found
+                      echo "No results found";
+                  }
+                  mysqli_free_result($results);    
+                  mysqli_close($con);
+
+              ?>
     </div>
+    
+    <br><br>
     
     <h2>About us: ⇩</h2>
           If you're bored and you don't have any idea about how you're going to spend the rest of the day, you are in the right place! 
