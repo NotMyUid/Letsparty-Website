@@ -120,7 +120,7 @@
                 echo "City: ";
                 echo $event["city"];
                 echo "<br>"; ?>
-                <button class="button" onclick="location.href ='../php/addToCart.php?ID=<?php echo $ID; ?>'">Add to cart</button>
+                <button class="button" onclick="location.href ='../php/addToCart.php?eventID=<?php echo $ID; ?>'">Add to cart</button>
                 <?php
               }else{
                 echo "There are no events for this city.";

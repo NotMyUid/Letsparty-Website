@@ -1,10 +1,13 @@
 <?php
-    include '../php/getSession.php';
-    if (isset($_GET["ID"])) {
-        $ID=$_GET["ID"];
+    session_start();
+    if(!isset($_SESSION["ID"])){
+        echo "<script>window.location.href='../html/LoginAndRegistration.php'</script>";
+    }
+    if (isset($_GET["eventID"])) {
+        $ID=$_GET["eventID"];
     }
     else{
-        header("../html/Event.php");
+        echo "<script>window.location.href='../php/Event.php'</script>";
     }
     require_once('../db/mysql_credentials.php');
     $con = new mysqli($mysql_host,$mysql_user,$mysql_pass,$mysql_db, $mysql_port);
