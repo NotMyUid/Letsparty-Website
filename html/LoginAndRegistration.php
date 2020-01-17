@@ -89,7 +89,7 @@
     </nav>
     <!--end navbar-->
     <br><br>
-    <script src="../js/index.js"></script>
+    <script src="../js/showCartBox.js"></script>
 
     <?php
     include '../php/cart.php';

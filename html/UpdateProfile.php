@@ -81,7 +81,7 @@
     </nav>
     <!--end navbar-->
     <br><br>
-    <script src="../js/index.js"></script>
+    <script src="../js/showCartBox.js"></script>
 
     <?php
     include '../php/cart.php';
@@ -110,12 +110,14 @@
                         }
                         mysqli_close($con);   
                     ?>
-                    <form action="../php/update_profile.php" method="POST">
+                    <form id="updateForm" action="../php/update_profile.php" method="POST">
 
                         <label for="firstName">First name</label>           <input type="text" name="firstName" value=<?php echo $row["firstName"];?>>
                         <label for="lastName">Last name</label>             <input type="text" name="lastName"  value=<?php echo $row["lastName"];?>>
-                        <label for="city">City</label>                      <input type="text" name="city"  value=<?php echo $row["city"];?>>
-                        <label for="about_me">About me</label>               <input type="text" name="about_me"  value=<?php echo $row["about_me"];?>>
+                        <label for="city">City</label>                      <input type="text" name="city"      value=<?php echo $row["city"];?>>
+                        <label for="about_me">About me</label>  
+                        <br>            
+                        <textarea name="about_me" cols="20" rows ="10" form="updateForm"style="width: 224px; height: 63px;"><?php echo $row["about_me"];?></textarea>
                         <input type="submit" value="Update">
                     </form>
                 
