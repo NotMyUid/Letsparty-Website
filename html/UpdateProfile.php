@@ -12,6 +12,7 @@
   </head>
 
   <body>
+  <div class="header"></div> 
     <!-- Navigation Bar start -->
     <nav>
     <div class="container">

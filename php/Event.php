@@ -28,6 +28,7 @@
   </head>
 
   <body background="../images/<?php echo $event["image"]; ?>.jpg">
+  <div class="header"></div> 
     <!-- Navigation Bar start -->
     <nav>
     <div class="container">

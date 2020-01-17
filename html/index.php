@@ -13,8 +13,7 @@
   </head>
 
   <body>
-    <div class="header">
-    </div> 
+    <div class="header"></div> 
 
     <!-- Navigation Bar start -->
     <nav>
