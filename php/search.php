@@ -5,7 +5,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Let's Party</title>  
+    <title>Let's Party</title> 
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <link rel="stylesheet" href="../css/Cities.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">  
