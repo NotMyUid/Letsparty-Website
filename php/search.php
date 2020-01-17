@@ -1,38 +1,19 @@
 <?php
-    session_start();
-    require_once('../db/mysql_credentials.php');
-    $con = new mysqli($mysql_host,$mysql_user,$mysql_pass,$mysql_db, $mysql_port);
-    if(isset($_SESSION['ID']))
-    {
-      $sessionID=$_SESSION["ID"];
-      $query="SELECT * FROM Users WHERE ID ='".$sessionID."'";
-      $res = $con->query($query);
-      if($res) 
-      {      
-          $row=mysqli_fetch_assoc($res);
-          mysqli_free_result($res);
-      }
-      else{
-          echo("Unexpected error <br>");
-      }                 
-      mysqli_close($con);
-    }
+  include '../php/getSession.php';
 ?>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
     <title>Let's Party</title>  
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="../css/Cities.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
 
   <body>
-    <div class="header">
-      <h1>Let's Party</h1>
-      <p>Find best parties in your city!</p>
-    </div> 
+    <div class="header"></div> 
 
     <!-- Navigation Bar start -->
     <nav>
@@ -71,13 +52,13 @@
             </div>
           </div> <!--end shopping-cart-header -->
 
-          <ul class="shopping-cart-items">
+          <ul class="shopping-cart-items" id="box">
           
-          
-            <li class="clearfix" id="box">
+          <!--  
+            <li class="clearfix">
 
             </li>
-          <!--  
+         
             <li class="clearfix">
               <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item2.jpg" alt="item1" />
               <span class="item-name">KS Automatic Mechanic...</span>
@@ -100,7 +81,12 @@
       </div> <!--end container -->
     </nav>
     <!--end navbar-->
+    <br><br>
     <script src="../js/index.js"></script>
+
+    <?php
+    include '../php/cart.php';
+    ?>
 
     <script type="text/javascript">
             var badge=0;
