@@ -137,7 +137,8 @@ nav ul li a:hover {
     border-radius: 3px;
     float: right;
     padding: 20px;
-    position: relative;
+    position: absolute;
+    right: 497px;
     width: 320px;
     display: none;
 }
