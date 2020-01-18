@@ -10,7 +10,7 @@
       if($res) 
       {      
           $user=mysqli_fetch_assoc($res);?>
-          <script type="text/javascript">
+          <script>
           if(document.referrer.includes("Login")){
             document.addEventListener('DOMContentLoaded', function() {
                 alert("Welcome <?php echo $user['firstName']; ?>");

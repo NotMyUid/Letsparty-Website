@@ -8,7 +8,7 @@
     }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <title>Let's Party</title>  
@@ -115,7 +115,7 @@
                         <div class="flip-card" onclick="location.href ='../html/Events.php?ID=<?php echo $ID; ?>'"> 
                             <div class="flip-card-inner">
                                 <div class="flip-card-front">
-                                    <img src="../images/<?php echo $image; ?>.jpg" alt=<?php echo $name; ?> height="200px" width="100%" overflow="hidden">
+                                    <img src="../images/<?php echo $image; ?>.jpg" alt="<?php echo $name; ?>">
                                     <h1><?php echo $name; ?></h1>
                                 </div>
                                 <div class="flip-card-back">

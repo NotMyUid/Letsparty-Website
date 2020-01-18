@@ -1,8 +1,15 @@
 ﻿<?php
   include '../php/getSession.php';
 ?>
+<script>
+    if(document.referrer.includes("addToCart")){
+      document.addEventListener('DOMContentLoaded', function() {
+          alert("You have to be logged to book a ticket!");
+      }, false);
+    }
+  </script>
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <title>Let's Party</title>  
@@ -11,14 +18,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
-
-  <script type="text/javascript">
-          if(document.referrer.includes("addToCart")){
-            document.addEventListener('DOMContentLoaded', function() {
-                alert("You have to be logged to book a ticket!");
-            }, false);
-          }
-          </script>
 
   <body>
   <div class="header"></div> 

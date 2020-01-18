@@ -6,7 +6,7 @@
     }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <title>Let's Party</title> 
@@ -91,7 +91,7 @@
     include '../php/cart.php';
     ?>
 
-      <script type="text/javascript">
+      <script>
         function Logout(){
           window.location.href = '../php/logout.php';
         }

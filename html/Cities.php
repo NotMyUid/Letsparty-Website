@@ -2,7 +2,7 @@
   include '../php/getSession.php';
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <title>Let's Party</title>  
@@ -102,7 +102,7 @@
                     while($city = $res->fetch_assoc()) {
                         $name=$city["name"]; ?>
                         <div class="card" onclick="location.href ='../html/CityEvents.php?name=<?php echo $name; ?>'"> 
-                            <img src="../images/<?php echo $city["image"]; ?>.jpg" alt=<?php echo $name; ?> height="200px" width="100%" overflow="hidden">
+                            <img src="../images/<?php echo $city["image"]; ?>.jpg" alt="<?php echo $name; ?>">
                             <h1><?php echo $name; ?></h1>
                         </div>                        
                         <?php

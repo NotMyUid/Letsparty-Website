@@ -18,6 +18,12 @@
     font-size: small;
 }
 
+.card img{
+  height:200px;
+  width: 100%;
+  overflow:hidden;
+}
+
 h1 {
   margin: 0 0 20px 0;
   font-weight: 300;
@@ -80,6 +86,12 @@ h1 {
   .flip-card-front {
     background-color: #bbb;
     color: black;
+  }
+  
+  .flip-card-front img{
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
   }
   
   /* Style the back side */

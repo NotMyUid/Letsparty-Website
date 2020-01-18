@@ -41,7 +41,7 @@ function showCart(a){
       if(isset($user)) 
       { 
         ?>     
-        <script type="text/javascript">
+        <script>
           showCart(true);
           </script>
         <?php
@@ -49,7 +49,7 @@ function showCart(a){
       else
       {
         ?>
-        <script type="text/javascript">
+        <script>
         showCart(false);
         </script>
         <?php
