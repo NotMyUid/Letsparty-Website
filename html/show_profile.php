@@ -105,6 +105,7 @@
         </h1>
         <div id="user-box">
             <div class="left">
+            Email: <?php echo $user["email"] ?><br>
             First name: <?php echo $user["firstName"] ?><br>
             Last name: <?php echo $user["lastName"] ?><br>
             City: <?php echo $user["city"] ?><br>

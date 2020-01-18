@@ -112,8 +112,8 @@
                     ?>
                     <form id="updateForm" action="../php/update_profile.php" method="POST">
 
-                        <label for="firstName">First name</label>           <input type="text" name="firstName" value=<?php echo $row["firstName"];?>>
-                        <label for="lastName">Last name</label>             <input type="text" name="lastName"  value=<?php echo $row["lastName"];?>>
+                        <label for="firstName">First name</label>           <input type="text" name="firstname" value=<?php echo $row["firstName"];?>>
+                        <label for="lastName">Last name</label>             <input type="text" name="lastname"  value=<?php echo $row["lastName"];?>>
                         <label for="city">City</label>                      <input type="text" name="city"      value=<?php echo $row["city"];?>>
                         <label for="about_me">About me</label>  
                         <br>            
