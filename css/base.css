@@ -105,6 +105,10 @@ nav ul li {
     display: inline;
     padding-left: 20px;
 }
+
+#last   {
+    float: inline-end;
+}
 nav ul li a {
     color: rgb(75, 69, 69);
     text-decoration: none;
@@ -132,15 +136,20 @@ nav ul li a:hover {
     white-space: nowrap;
     width: 25px;
 }
+
+#cart{
+    float: inline-end;
+}
 .shopping-cart {
     background: rgb(255, 255, 255) none repeat scroll 0 0;
     border-radius: 3px;
-    float: right;
+    float: inline-end;
     padding: 20px;
     position: absolute;
     right: 497px;
     width: 320px;
     display: none;
+    margin-top: 5px;
 }
 .shopping-cart .shopping-cart-header {
     border-bottom: 1px solid rgb(232, 232, 232);

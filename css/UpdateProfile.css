@@ -69,3 +69,8 @@ input[type="submit"]:active {
   padding: 40px;
   height: 400px;
 }
+
+textarea{
+  width: 224px;
+  height: 63px;
+}

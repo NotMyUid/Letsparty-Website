@@ -28,7 +28,7 @@
       <ul class="navbar-left">
         <li><a href="../html/index.php">Home</a></li>
         <li><a href="../html/Cities.php">Cities</a></li>
-        <li><a href="../html/show_profile.php" style="float: inline-end;">
+        <li><a id="last" href="../html/show_profile.php">
         <p id="profile"> Profile </p>
         <p id="login"> Login </p>
         </a></li>
@@ -43,14 +43,14 @@
 
       <ul class="navbar-right" id="nav-right">
       <li>
-        <a href="#" id="cart" style="float: inline-end;">
+        <a href="#" id="cart">
           <i class="fa fa-shopping-cart"></i> Cart 
           <span class="badge" id="num"></span>
         </a>
       </li>
       
       <div class="container">
-        <div class="shopping-cart" style="float: inline-end; margin-top: 5px;">
+        <div class="shopping-cart">
           <div class="shopping-cart-header">
             <i class="fa fa-shopping-cart cart-icon"></i><span class="badge" id="num2"></span>
             <div class="shopping-cart-total">
