@@ -42,7 +42,11 @@ input[type="submit"] {
   text-transform: uppercase;
   transition: 0.1s ease;
   cursor: pointer;
-  margin-inline-start: 48px;
+  margin-inline-start: 80px;
+}
+
+input[value="Logout"]{
+  background: #df0000;
 }
 
 input[type="submit"]:hover,
@@ -63,6 +67,5 @@ input[type="submit"]:active {
   left: 0;
   box-sizing: border-box;
   padding: 40px;
-  width: 300px;
   height: 400px;
 }

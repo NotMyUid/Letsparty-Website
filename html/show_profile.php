@@ -109,14 +109,9 @@
             Last name: <?php echo $user["lastName"] ?><br>
             City: <?php echo $user["city"] ?><br>
             About me: <?php echo $user["about_me"] ?><br><br>
-            <p class=logout  style="display: inline-block;padding-right: 10px;">
-            <button type="submit" onclick="Logout()">Logout</button>
-        <!--<a href="../php/logout.php">Logout</a>-->
-            </p>
-            <p class=update style="display: inline-block;padding-right: 10px;">
-            <button type="submit" onclick="Update()">Update</button>
-        <!--<a href="../html/UpdateProfile.php">Modify</a>-->
-            </p>
+            
+            <input type="submit" value="Logout" onclick="Logout()">
+            <input type="submit" value="Update" onclick="Update()">
             </div>
         </div>
         <div class="footer">
