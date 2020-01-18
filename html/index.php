@@ -98,7 +98,7 @@
                 if ($con->connect_error) {
                     die("Connection failed: " . $con->connect_error);
                 } 
-                $query="SELECT * FROM Events WHERE DATE(to_date) >= DATE(NOW()) ORDER BY from_date";
+                $query="SELECT * FROM Events WHERE DATE(to_date) >= DATE(NOW()) ORDER BY from_date LIMIT 3";
                 $results = $con->query($query);
                 if(count($results)>0) {
                   foreach ($results as $result) {
@@ -109,7 +109,7 @@
                   $from=$result["from_date"];
                   $price=$result["price"];
                   ?>
-                  <div class="flip-card" onclick="location.href ='../php/Event.php?ID=<?php echo $ID; ?>'"> 
+                  <div class="flip-card" onclick="location.href ='../html/Events.php?ID=<?php echo $ID; ?>'"> 
                           <div class="flip-card-inner">
                               <div class="flip-card-front">
                                   <img src="../images/<?php echo $image; ?>.jpg" alt=<?php echo $name; ?> height="200px" width="100%" overflow="hidden">

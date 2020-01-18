@@ -120,7 +120,7 @@
                     $from=$result["from_date"];
                     $price=$result["price"];
                     ?>
-                    <div class="flip-card" onclick="location.href ='../php/Event.php?ID=<?php echo $ID; ?>'"> 
+                    <div class="flip-card" onclick="location.href ='../html/Events.php?ID=<?php echo $ID; ?>'"> 
                             <div class="flip-card-inner">
                                 <div class="flip-card-front">
                                     <img src="../images/<?php echo $image; ?>.jpg" alt=<?php echo $name; ?> height="200px" width="100%" overflow="hidden">

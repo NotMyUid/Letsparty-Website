@@ -45,6 +45,10 @@ input[type="submit"] {
   margin-inline-start: 80px;
 }
 
+input[value="Update"]{
+  margin-inline-start: 50px;
+}
+
 input[value="Logout"]{
   background: #df0000;
 }
