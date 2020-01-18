@@ -1,12 +1,12 @@
 <?php
 
-function search($search ,$baseurl = 'http://localhost:5000') {
+function search($search ,$baseurl = 'https://webdev19.dibris.unige.it/~S4368146/') {
 
     $search = urlencode($search);
 
     $ch = curl_init();
 
-    $url = "$baseurl/search.php";
+    $url = "$baseurl/php/search.php";
 
     $cookieFile = "cookies";
     if(!file_exists($cookieFile)) {
@@ -34,5 +34,5 @@ function search($search ,$baseurl = 'http://localhost:5000') {
 } 
 
 function check_search_found($search, $search_page) {
-    return strpos($show_page, $search); 
+    return strpos($search_page, $search); 
 }

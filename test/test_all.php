@@ -63,6 +63,22 @@ echo check_correct_user($email, $first_name, $last_name, show_logged_user($baseu
 
 
 echo "------------------------\n";
-echo "TODO: implement search tests";
 
-// TODO: implement search check
+echo "[+] Testing search\n";
+
+echo "[-] Calling search.php - Search: Music. \n";
+ 
+$res1=check_search_found("Music",search("Music",$baseurl));
+
+echo "[-] Calling search.php - Search: Orchestra. \n";
+ 
+$res2=check_search_found("Orchestra",search("orchestra",$baseurl));
+
+echo "[-] Calling search.php - Search: Casa. \n";
+ 
+$res3=check_search_found("Casa",search("Casa",$baseurl));
+
+echo ($res1 && $res2 && !$res3)
+    ? "[*] Success!\n"
+    : "[*] Failed\n";
+
