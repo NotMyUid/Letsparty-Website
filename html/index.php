@@ -136,14 +136,19 @@
     
     <br><br>
     
+    <div class="about_us">
     <h2>About us: ⇩</h2>
-          If you're bored and you don't have any idea about how you're going to spend the rest of the day, you are in the right place! 
-          You just need to REGISTER or SIGN IN to look for all the events taking place near you. 
-          <br>
-          Once you register you can also decide to subscribe to the per-country-newsletter, so you couldn't miss a thing  !
-          <br>
-          YES, IT'S FREE!            
-          <br><br><br><br>
+    <p>
+          You're bored and you don't have any idea about how you're going to spend the rest of the day? <br>
+          do you want to buy tickets for the game of your favorite team? <br> 
+          You are in the right place! 
+          You just have to REGISTER to buy tickets for all the events taking place near you. 
+          <br><br><br>
+      </p>
+    </div>
+
+    <div class="footer_logo">
+    </div>
 
     <div class="footer">
         <h3>Contact us: <a href="mailto:info@letsparty.staff.com">info@letsparty.staff.com</a></h3>
