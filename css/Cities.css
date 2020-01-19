@@ -35,7 +35,7 @@ h1 {
 }
 
 .footer {
-    position: fixed;
+    position: inherit;
     left: 0;
     bottom: 0;
     height: 50px;
@@ -125,6 +125,5 @@ h1 {
     background-repeat: repeat;
     background-size: contain;
     background-attachment: scroll;
-    margin-bottom: 50px;
     padding-bottom: 100px;
   }
