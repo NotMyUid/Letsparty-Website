@@ -78,9 +78,13 @@
                 if ($res->num_rows > 0) {
                     while($city = $res->fetch_assoc()) {
                         $name=$city["name"]; ?>
-                        <div class="card" onclick="location.href ='../html/CityEvents.php?name=<?php echo $name; ?>'"> 
+                        <div class="flip-card" onclick="location.href ='../html/CityEvents.php?name=<?php echo $name; ?>'"> 
+                          
+                            <div class="flip-card-front">
                             <img src="../images/<?php echo $city["image"]; ?>.jpg" alt="<?php echo $name; ?>">
                             <h1><?php echo $name; ?></h1>
+                            </div>
+                            
                         </div>                        
                         <?php
                     }
