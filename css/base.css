@@ -65,7 +65,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    min-height: 100%;
+    height: 100%;
 }
 .lighter-text {
     color: rgb(171, 176, 190);
@@ -254,6 +254,17 @@ nav ul li a:hover {
   .footer {
     position: absolute;
     left: 0;
+    height: 50px;
+    width: 100%;
+    padding-bottom: 10px; /* Some padding */
+    text-align: center; /* Center text*/
+    background: #ddd; /* Grey background */
+  }
+
+  .footer2 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
     height: 50px;
     width: 100%;
     padding-bottom: 10px; /* Some padding */

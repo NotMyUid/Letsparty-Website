@@ -68,8 +68,9 @@ h1 {
   
   .flip-card-front img{
     height: 200px;
-    width: 100%;
+    width: 300px;
     overflow: hidden;
+    object-fit: cover;
   }
   
   /* Style the back side */

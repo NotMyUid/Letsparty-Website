@@ -120,7 +120,7 @@
             ?>
         </div>
 
-        <div class="footer">
+        <div class="footer2">
             <h3>Contact us: <a href="mailto:info@letsparty.staff.com">info@letsparty.staff.com</a></h3>
         </div>          
     </body>
