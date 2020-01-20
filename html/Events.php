@@ -80,7 +80,7 @@
     include '../php/cart.php';
     ?>
 
-        <div class="main">
+        <div class="main-event">
           <h1><?php echo $event['name']; ?></h1>
           <div id="user-box">
             <div class="left">

@@ -1,14 +1,5 @@
 @import url(../css/base.css);
 
- /* Main column */
- .main {
-    display: flex;
-    flex: 70%; /* Set the width of the main content */
-    background-color: white; /* White background color */
-    padding: 20px; /* Some padding */
-    padding-bottom: 100px;
-  }
-
   .card {
     cursor: pointer;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);

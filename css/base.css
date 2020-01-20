@@ -65,6 +65,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
+    min-height: 100%;
 }
 .lighter-text {
     color: rgb(171, 176, 190);
@@ -251,9 +252,8 @@ nav ul li a:hover {
   }
   
   .footer {
-    position: inherit;
+    position: absolute;
     left: 0;
-    bottom: 0;
     height: 50px;
     width: 100%;
     padding-bottom: 10px; /* Some padding */
@@ -262,8 +262,11 @@ nav ul li a:hover {
   }
 
   
-     /* Main column */
- .main {
-    flex: 70%; /* Set the width of the main content */
-    padding: 20px; /* Some padding */
-  }
+/* Main column */
+.main {
+display: flex;
+flex: 70%; /* Set the width of the main content */
+background-color: white; /* White background color */
+padding: 20px; /* Some padding */
+padding-bottom: 100px;
+}
