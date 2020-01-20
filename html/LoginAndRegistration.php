@@ -79,11 +79,11 @@
                     
                     <form action="../php/registration.php" method="POST">
                     
-                        <label for="firstname">First name</label>           <input type="text" name="firstname" placeholder="First name">
-                        <label for="lastname">Last name</label>             <input type="text" name="lastname" placeholder="Last name">
-                        <label for="email">E-mail</label>                   <input type="email" name="email" placeholder="E-mail">
-                        <label for="pass">Password</label>                  <input type="password" name="pass" placeholder="Password">
-                        <label for="confirm">Confirm Password</label>       <input type="password" name="confirm" placeholder="Retype password">
+                        First name           <input type="text" name="firstname" placeholder="First name">
+                        Last name            <input type="text" name="lastname" placeholder="Last name">
+                        E-mail               <input type="email" name="email" placeholder="E-mail">
+                        Password             <input type="password" name="pass" placeholder="Password">
+                        Confirm Password     <input type="password" name="confirm" placeholder="Retype password">
 
                         <!-- TODO: Add additional fields here -->
 
@@ -96,12 +96,12 @@
         
             <div class="login">
                 
-                <span class="loginwith">Sign in</span>
+                <h1>Sign in</h1>
                 
                 <form action="../php/login.php" method="POST">
                 
-                    Email<input type="email" name="email" placeholder="E-mail">
-                    Password<input type="password" name="pass" placeholder="Password">
+                    Email     <input type="email" name="email" placeholder="E-mail">
+                    Password  <input type="password" name="pass" placeholder="Password">
                 
                     <input type="submit" value="Submit">
             

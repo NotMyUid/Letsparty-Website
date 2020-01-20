@@ -1,10 +1,3 @@
-<?php
-    include '../php/getSession.php';
-    // Get profile data from database (check current session)
-    if(!isset($sessionID)){
-      echo"<script>window.location.href = '../html/LoginAndRegistration.php';</script>";
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,7 +11,13 @@
 
   <body>
     <div class="header"></div> 
-
+    <?php
+      include '../php/getSession.php';
+      // Get profile data from database (check current session)
+      if(!isset($sessionID)){
+        echo"<script>window.location.href = '../html/LoginAndRegistration.php';</script>";
+      }
+    ?>
     <!-- Navigation Bar start -->
     <nav>
     <div class="container">
