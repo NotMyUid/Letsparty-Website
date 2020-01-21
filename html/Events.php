@@ -28,7 +28,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
 
-  <body background="../images/<?php echo $event["image"]; ?>.jpg">
+  <body>
     <div class="header"></div> 
 
     <!-- Navigation Bar start -->
@@ -80,37 +80,41 @@
     include '../php/cart.php';
     ?>
 
-        <div class="main-event">
-          <h1><?php echo $event['name']; ?></h1>
-          <div id="user-box">
-            <div class="left">
-              <?php
-              if(isset($event)){
-                echo "From: ";
-                echo $event["from_date"];
-                echo "<br>";
-                echo "To: ";
-                echo $event["to_date"];
-                echo "<br>";
-                echo "Price: ";
-                echo $event["price"];
-                echo "€";
-                echo "<br>";
-                echo "City: ";
-                echo $event["city"];
-                echo "<br>"; ?>
-                <button class="button" onclick="location.href ='../php/addToCart.php?eventID=<?php echo $ID; ?>'">Add to cart</button>
-                <?php
-              }else{
-                echo "There are no events for this city.";
-              }
-              ?>                
-            </div>
-          </div>
+    <div class="main-event">
+      <h1><?php echo $event['name']; ?></h1>
+      <div id="user-box">
+        <div class="left">
+          <?php
+          if(isset($event)){
+            echo "From: ";
+            echo $event["from_date"];
+            echo "<br>";
+            echo "To: ";
+            echo $event["to_date"];
+            echo "<br>";
+            echo "Price: ";
+            echo $event["price"];
+            echo "€";
+            echo "<br>";
+            echo "City: ";
+            echo $event["city"];
+            echo "<br>"; ?>
+            <button class="button" onclick="location.href ='../php/addToCart.php?eventID=<?php echo $ID; ?>'">Add to cart</button>
+            <?php
+          }else{
+            echo "There are no events for this city.";
+          }
+          ?>                
         </div>
+      </div>
+    </div>
           
-        <div class="footer">
-            <h3>Contact us: <a href="mailto:info@letsparty.staff.com">info@letsparty.staff.com</a></h3>
-        </div>          
-    </body>
+    <div class="footer">
+        <h3>Contact us: <a href="mailto:info@letsparty.staff.com">info@letsparty.staff.com</a></h3>
+    </div>          
+  </body>
+
+  <script>
+    document.body.background="../images/<?php echo $event["image"]; ?>.jpg"
+  </script>
 </html> 
