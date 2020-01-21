@@ -30,6 +30,10 @@
 
   <body>
     <div class="header"></div> 
+              
+    <script>
+    document.body.background="../images/<?php echo $event["image"]; ?>.jpg"
+    </script>
 
     <!-- Navigation Bar start -->
     <nav>
@@ -111,10 +115,6 @@
           
     <div class="footer">
         <h3>Contact us: <a href="mailto:info@letsparty.staff.com">info@letsparty.staff.com</a></h3>
-    </div>          
-  </body>
-
-  <script>
-    document.body.background="../images/<?php echo $event["image"]; ?>.jpg"
-  </script>
+    </div>
+  </body>  
 </html> 
