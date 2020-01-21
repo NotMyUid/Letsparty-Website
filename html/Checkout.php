@@ -103,7 +103,9 @@
                 var button = document.createElement("input");
                 button.type = "submit";
                 button.value = "Remove";
-                button.onclick =  "../php/removeFromCart()";
+                button.onclick = function(){
+                  document.location= "../php/removeFromCart.php?ID="+key;
+                }
                 temp.appendChild(name);
                 temp.appendChild(price);
                 temp.appendChild(quantity);
