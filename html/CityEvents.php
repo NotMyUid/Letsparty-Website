@@ -33,7 +33,7 @@
         </a></li>
       </ul> <!--end navbar-left -->
       
-      <form id="search" action="../php/search.php">
+      <form id="search" action="../html/search.php">
         <input type="text" placeholder="Search.." name="search">
         <button type="submit">Submit</button>
       </form>

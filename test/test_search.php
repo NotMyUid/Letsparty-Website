@@ -6,7 +6,7 @@ function search($search ,$baseurl = 'https://webdev19.dibris.unige.it/~S4368146/
 
     $ch = curl_init();
 
-    $url = "$baseurl/php/search.php";
+    $url = "$baseurl/html/search.php";
 
     $cookieFile = "cookies";
     if(!file_exists($cookieFile)) {
