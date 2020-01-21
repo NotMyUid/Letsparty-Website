@@ -90,21 +90,19 @@
         <div class="left">
           <?php
           if(isset($event)){
-            echo "From: ";
-            echo $event["from_date"];
-            echo "<br>";
-            echo "To: ";
-            echo $event["to_date"];
-            echo "<br>";
+            echo "From: ".$event["from_date"]."<br>";
+            echo "To: ".$event["to_date"]."<br>";
             echo "Price: ";
-            echo $event["price"];
-            echo "€";
-            echo "<br>";
-            echo "City: ";
-            echo $event["city"];
-            echo "<br>"; ?>
-            <button class="button" onclick="location.href ='../php/addToCart.php?eventID=<?php echo $ID; ?>'">Add to cart</button>
-            <?php
+            if($event["price"]!=0){
+              echo $event["price"]."€ <br>";
+            }
+            else{
+              echo "Free <br>";
+            }
+            echo "City: ".$event["city"]."<br>"; 
+          ?>
+          <button class="button" onclick="location.href ='../php/addToCart.php?eventID=<?php echo $ID; ?>'">Add to cart</button>
+          <?php
           }else{
             echo "There are no events for this city.";
           }
