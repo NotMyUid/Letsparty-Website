@@ -109,7 +109,7 @@
                 button.type = "submit";
                 button.value = "Remove";
                 button.onclick = function(){
-                  document.location= "../php/removeFromCart.php?ID="+key;
+                  window.location.href= "../php/removeFromCart.php?ID="+key;
                 }
                 temp.appendChild(name);
                 temp.appendChild(price);
@@ -128,6 +128,9 @@
             var buy = document.createElement("input");
             buy.type="submit";
             buy.value="Buy";
+            buy.onclick= function(){
+              window.location.href="../php/buy.php?cart="+JSON.stringify(cartArray);
+            }
             elem.appendChild(tot);
             elem.appendChild(buy);
             document.getElementById("cart-list").appendChild(elem);

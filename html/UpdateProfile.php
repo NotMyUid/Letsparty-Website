@@ -83,16 +83,16 @@
                             mysqli_free_result($res);                                                               
                         }
                         else{
-                            echo "<script>window.location.href='../html/LoginAndRegistration.html'</script>";
+                            echo "<script>window.location.href='../html/LoginAndRegistration.php'</script>";
                         }
                         mysqli_close($con);   
                     ?>
                     <form id="updateForm" action="../php/update_profile.php" method="POST">
 
-                        <label for="firstName">First name</label>           <input type="text" name="firstname" value=<?php echo $row["firstName"];?>>
-                        <label for="lastName">Last name</label>             <input type="text" name="lastname"  value=<?php echo $row["lastName"];?>>
-                        <label for="city">City</label>                      <input type="text" name="city"      value=<?php echo $row["city"];?>>
-                        <label for="about_me">About me</label>  
+                        First name           <input type="text" name="firstname" value="<?php echo $row["firstName"];?>">
+                        Last name            <input type="text" name="lastname"  value="<?php echo $row["lastName"];?>">
+                        City                 <input type="text" name="city"      value="<?php echo $row["city"];?>">
+                        About me  
                         <br>            
                         <textarea name="about_me" cols="20" rows ="10" form="updateForm"><?php echo $row["about_me"];?></textarea>
                         <input type="submit" value="Update">
