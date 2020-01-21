@@ -77,14 +77,19 @@
         <h3>Contact us: <a href="mailto:info@letsparty.staff.com">info@letsparty.staff.com</a></h3>
     </div>
 
-    <?php
-    if(isset($_SESSION["cart"])){
-    ?>
-    
+          
         <script>
             var total=0;
-            var cartArray= <?php echo json_encode($_SESSION["cart"], JSON_PRETTY_PRINT);?>;
-            Object.keys(cartArray).forEach(function (key){
+            var cartArray= <?php
+              if(isset($_SESSION["cart"])){
+                echo json_encode($_SESSION["cart"], JSON_PRETTY_PRINT);
+              }
+              else{
+                echo 0;
+              } 
+            ?>;                
+            if(cartArray!=null){
+              Object.keys(cartArray).forEach(function (key){
                 var temp = document.createElement("div");
                 temp.className = "item";
                 var name = document.createElement("div");
@@ -113,7 +118,8 @@
                 document.getElementById("cart-list").appendChild(temp);
                     
                 total+=cartArray[key].price*cartArray[key].quantity;
-            });
+              });
+            }
             var elem = document.createElement("div");
             elem.className="Item";
             var tot = document.createElement("div");
@@ -125,10 +131,6 @@
             elem.appendChild(tot);
             elem.appendChild(buy);
             document.getElementById("cart-list").appendChild(elem);
-        </script>  
-    
-        <?php
-    }
-    ?>
+      </script>  
   </body>
 </html>
