@@ -50,7 +50,7 @@
               <span class="main-color-text" id="total"></span>
             </div>
           </div> <!--end shopping-cart-header -->
-          <a href="#" class="button">Checkout</a>
+          <a href="../html/Checkout.php" class="button">Checkout</a>
         </div> <!--end shopping-cart -->
       </div> <!--end container -->
       </div> <!--end navbar-right -->

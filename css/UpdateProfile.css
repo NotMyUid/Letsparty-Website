@@ -1,11 +1,11 @@
 @import url(../css/base.css);
 
-#user-box {
+#user-box, #cart-list {
     background: rgba(255, 255, 255, 0.9);
     top: auto;
     margin: 5% auto;
     width: 600px;
-    height: 550px;
+    height: auto;
     border-radius: 2px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
@@ -49,8 +49,12 @@ input[value="Update"]{
   margin-inline-start: 50px;
 }
 
-input[value="Logout"]{
+input[value="Logout"], input[value="Remove"]{
   background: #df0000;
+}
+
+input[value="Buy"]{
+  margin-bottom: 50px;
 }
 
 input[type="submit"]:hover,
@@ -66,12 +70,20 @@ input[type="submit"]:active {
   transition: 0.1s ease;
 }
 
-.left {
+.left{
   top: 0;
   left: 0;
   box-sizing: border-box;
   padding: 40px;
   height: 400px;
+}
+
+.item {
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  padding-left: 40px;
+  padding-top: 40px;
 }
 
 textarea{
