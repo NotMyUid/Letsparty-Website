@@ -42,37 +42,15 @@ input[type="submit"] {
   text-transform: uppercase;
   transition: 0.1s ease;
   cursor: pointer;
-  /* margin-inline-start: 80px; */
+  margin-inline-start: 80px;
 }
 
-/*)
 input[value="Update"]{
   margin-inline-start: 50px;
-} */
+}
 
 input[value="Logout"], input[value="Remove"]{
   background: #df0000;
-}
-
-input[value="Subscribe"]{
-  width: 90px;
-  height: 22px;
-}
-
-input[value="Stop"]{
-  background: #df0000;
-  margin-top: 28px;
-  width: 90px;
-  height: 22px;
-  border: none;
-  border-radius: 2px;
-  color: #FFF;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 500;
-  text-transform: uppercase;
-  transition: 0.1s ease;
-  cursor: pointer;
-  /* margin-inline-start: 80px; */
 }
 
 input[value="Buy"]{
@@ -97,7 +75,7 @@ input[type="submit"]:active {
   left: 0;
   box-sizing: border-box;
   padding: 40px;
-  height: 500px;
+  height: 400px;
 }
 
 .item {
@@ -109,7 +87,7 @@ input[type="submit"]:active {
 }
 
 textarea{
-  width: 210px;
+  width: 210;
   height: 68px;
 }
 

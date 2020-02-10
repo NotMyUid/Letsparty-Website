@@ -10,14 +10,11 @@
     <link rel="stylesheet" href="../css/Cities.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    
   </head>
 
   <body>
     <div class="header"></div> 
-	<?php if(isset($_SESSION['ID'])){ ?>
-	<script src="../js/welcomeBack.js"></script>
-	<?php }?>
+
     <!-- Navigation Bar start -->
     <nav>
     <div class="container">

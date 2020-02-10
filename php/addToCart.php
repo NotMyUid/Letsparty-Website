@@ -4,10 +4,10 @@
         $ID=$_GET["eventID"];
     }
     else{
-        header("Location: .../php/Event.php");
+        echo "<script>window.location.href='../php/Event.php'</script>";
     }
     if(!isset($_SESSION["ID"])){
-        header("Location: ../html/LoginAndRegistration.php");
+        echo "<script>window.location.href='../html/LoginAndRegistration.php'</script>";
     }
     else{
         require_once('../db/mysql_credentials.php');
@@ -26,6 +26,6 @@
             $_SESSION['cart'][$ID] = array('image' => $event["image"], 'name' => $event["name"], "price" => $event["price"], "quantity" => 1);
         else
             $_SESSION['cart'][$ID]["quantity"]++;
-        header("Location: ../html/index.php");
+        echo "<script>window.location.href='../html/index.php'</script>";
         }          
 ?>

@@ -1,9 +1,3 @@
-<!DOCTYPE HTML>
-<head>
-    <meta charset="utf-8">
-    <title>Let's Party!</title>
-</head>
-
 <?php
     session_start();
     if (isset($_GET["ID"])) {
@@ -11,7 +5,7 @@
 
         if(isset($_SESSION["cart"]) && isset($_SESSION["cart"][$ID])){
             unset($_SESSION["cart"][$ID]);
-            header("Location: ../html/Checkout.php");
+            echo "<script>window.location.href='../html/Checkout.php'</script>";
         }
         else{
             echo "Error: The product you're trying to remove is not in your cart.";

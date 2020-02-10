@@ -1,9 +1,3 @@
-<!DOCTYPE HTML>
-<head>
-    <meta charset="utf-8">
-    <title>Let's Party!</title>
-</head>
-
 <?php
     session_start();
     require_once('../db/mysql_credentials.php');
@@ -15,7 +9,14 @@
       $res = $con->query($query);
       if($res) 
       {      
-          $user=mysqli_fetch_assoc($res);
+          $user=mysqli_fetch_assoc($res);?>
+          <script>
+          if(document.referrer.includes("Login")){
+            document.addEventListener('DOMContentLoaded', function() {
+                alert("Welcome <?php echo $user['firstName']; ?>");
+            }, false);
+          }
+          </script><?php
           mysqli_free_result($res);
       }
       else{

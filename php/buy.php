@@ -29,5 +29,5 @@ foreach($cart as $index => $prod){
     unset($_SESSION["cart"][$index]);
 }
 mysqli_close($con);
-header("Location: ../html/index.php");
+echo "<script>window.location.href='../html/index.php'</script>";
 ?>
