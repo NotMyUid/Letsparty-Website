@@ -1,3 +1,9 @@
+<!DOCTYPE HTML>
+<head>
+    <meta charset="utf-8">
+    <title>Let's Party!</title>
+</head>
+
 <?php
 
 require_once('../db/mysql_credentials.php');

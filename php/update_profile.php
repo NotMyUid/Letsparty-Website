@@ -1,3 +1,9 @@
+<!DOCTYPE HTML>
+<head>
+    <meta charset="utf-8">
+    <title>Let's Party!</title>
+</head>
+
 <?php
 session_start();
 // TODO: change credentials in the db/mysql_credentials.php file
@@ -44,11 +50,7 @@ $successful = update_user($email, $first_name, $last_name, $city, $about_me, $co
 
 if ($successful) {
     // Success message
-    ?>
-    <script type="text/javascript">
-        window.location.href = '../html/show_profile.php';
-    </script>
-    <?php
+    header("Location: ../html/show_profile.php");
 } else {
     // Error message
     echo "There was an error in the update process.";

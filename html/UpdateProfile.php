@@ -87,11 +87,23 @@
                         }
                         mysqli_close($con);   
                     ?>
+                    
+                    <?php
+                    $fst="Null";
+                    $lst="Null";
+                    $cty="Null";
+                    
+                     
+                    if(isset($row["firstName"])) $fst=$row["firstName"];
+                    if(isset($row["lastName"]))  $lst=$row["lastName"];
+                    if(isset($row["city"]))      $cty=$row["city"];
+                    ?>
+                    
                     <form id="updateForm" action="../php/update_profile.php" method="POST">
 
-                        First name           <input type="text" name="firstname" value="<?php echo $row["firstName"];?>">
-                        Last name            <input type="text" name="lastname"  value="<?php echo $row["lastName"];?>">
-                        City                 <input type="text" name="city"      value="<?php echo $row["city"];?>">
+                        First name           <input type="text" name="firstname" value=<?php echo $fst?>>
+                        Last name            <input type="text" name="lastname"  value=<?php echo $lst?>>
+                        City                 <input type="text" name="city"      value=<?php echo $cty?>>
                         About me  
                         <br>            
                         <textarea name="about_me" cols="20" rows ="10" form="updateForm"><?php echo $row["about_me"];?></textarea>
@@ -102,7 +114,7 @@
         
         </div>
 
-        <div class="footer2">
+        <div class="footer">
             <h3>Contact us: <a href="mailto:info@letsparty.staff.com">info@letsparty.staff.com</a></h3>
         </div>      
 

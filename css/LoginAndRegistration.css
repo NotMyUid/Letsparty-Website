@@ -41,7 +41,7 @@ input[type="submit"] {
   text-transform: uppercase;
   transition: 0.1s ease;
   cursor: pointer;
-  margin-inline-start: 48px;
+  /* margin-inline-start: 48px; */
 }
 
 input[type="submit"]:hover,

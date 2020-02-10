@@ -76,9 +76,8 @@
           window.location.href = '../html/UpdateProfile.php';
         }
       </script>
-        <h1>
-            Profile
-        </h1>
+        
+       
         <div id="user-box">
             <div class="left">
             Email: <?php echo $user["email"] ?><br>
@@ -89,8 +88,24 @@
             
             <input type="submit" value="Logout" onclick="Logout()">
             <input type="submit" value="Update" onclick="Update()">
-            </div>
+            
+            <br><br><br>
+            <form action="../php/phpMailer.php" method="POST">
+            Are you interested in keeping up-to-date with the arrival of new features?<br>
+            Subscribe to our dedicated newsletter ►►► <input type="submit" name="sub"   value="Subscribe">
+            										  <input type="submit" name="unsub" value="Stop">
+            </form>
+            
+            <br>
+            
+            Are you satisfied with our service? <br>
+            Do you want to support us? Or at least offer us a beer?
+            <input type="button" name="donate" value="Donate" onclick="window.open('Donate.php')">
+            
+            </div>     
         </div>
+
+
         <div class="footer">
             <h3>Contact us: <a href="mailto:info@letsparty.staff.com">info@letsparty.staff.com</a></h3>
         </div>       
