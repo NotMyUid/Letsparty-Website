@@ -66,17 +66,17 @@ echo "------------------------\n";
 
 echo "[+] Testing search\n";
 
-echo "[-] Calling search.php - Search: Music. \n";
+echo "[-] Calling search.php - Search: Squadra. \n";
  
 $res1=check_search_found("Music",search("Music",$baseurl));
 
-echo "[-] Calling search.php - Search: Orchestra. \n";
+echo "[-] Calling search.php - Search: Band. \n";
  
-$res2=check_search_found("Orchestra",search("orchestra",$baseurl));
+$res2=check_search_found("Band",search("band",$baseurl));
 
 echo "[-] Calling search.php - Search: Casa. \n";
  
-$res3=check_search_found("Casa",search("Casa",$baseurl));
+$res3=check_search_found("Squadra",search("Sqadra",$baseurl));
 
 echo ($res1 && $res2 && !$res3)
     ? "[*] Success!\n"
