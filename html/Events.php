@@ -1,4 +1,18 @@
-<?php
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Let's Party</title>  
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="../css/UpdateProfile.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+  
+  <?php
     include '../php/getSession.php';
     if (isset($_GET["ID"])) {
         $ID=$_GET["ID"];
@@ -16,19 +30,8 @@
     }else{
       echo("Unexpected error <br>");
     }
-?>
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Let's Party</title>  
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-    <link rel="stylesheet" href="../css/UpdateProfile.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">  
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  </head>
-
-  <body>
+    ?>
+  
     <div class="header"></div> 
               
     <script>
